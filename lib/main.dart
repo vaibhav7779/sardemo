@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sar/pages/basicInfo.dart';
 // import 'package:sar/palette.dart';
-import 'package:sar/pages/addressConfirm.dart';
+// import 'package:sar/pages/addressConfirm.dart';
+import 'package:sar/pages/login.dart';
+import 'package:sar/pages/otp.dart';
+// import 'package:sar/pages/otp.dart';
+// import 'package:sar/utils/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +23,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const addressConfirm(),
+      home: OTPValidation(),
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
             backgroundColor: Color.fromRGBO(247, 182, 26, 1),
@@ -32,6 +37,30 @@ class _MyAppState extends State<MyApp> {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
           ),
+        ),
+// checkbox theme
+        unselectedWidgetColor: const Color.fromRGBO(225, 31, 42, 1),
+        checkboxTheme: CheckboxThemeData(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+            fillColor: MaterialStateColor.resolveWith(
+                (states) => const Color.fromRGBO(225, 31, 42, 1))),
+
+        // title and subtitle fontSize and color
+        listTileTheme: const ListTileThemeData(
+            titleTextStyle: TextStyle(fontSize: 20),
+            subtitleTextStyle: TextStyle(fontSize: 14),
+            textColor: Colors.black),
+
+        // text box outline color
+        inputDecorationTheme: const InputDecorationTheme(
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black),
+          ),
+        ),
+// cursor color
+        textSelectionTheme: const TextSelectionThemeData(
+          cursorColor: Colors.black,
         ),
       ),
     );
