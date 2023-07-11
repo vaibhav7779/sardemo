@@ -20,9 +20,12 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: const LoanSummary(),
       theme: ThemeData(
+        // AppBar theme
         appBarTheme: const AppBarTheme(
             backgroundColor: Color.fromRGBO(247, 182, 26, 1),
             centerTitle: false),
+
+// Elevated Button
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color.fromRGBO(184, 28, 34, 1),
@@ -33,6 +36,20 @@ class _MyAppState extends State<MyApp> {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
           ),
         ),
+
+        // checkbox
+        unselectedWidgetColor: const Color.fromRGBO(225, 31, 42, 1),
+        checkboxTheme: CheckboxThemeData(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+            fillColor: MaterialStateColor.resolveWith(
+                (states) => const Color.fromRGBO(225, 31, 42, 1))),
+
+        // // title and subtitle fontSize and color
+        // listTileTheme: const ListTileThemeData(
+        //     titleTextStyle: TextStyle(fontSize: 20),
+        //     subtitleTextStyle: TextStyle(fontSize: 14),
+        //     textColor: Colors.black),
       ),
     );
   }

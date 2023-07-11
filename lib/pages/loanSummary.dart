@@ -53,6 +53,101 @@ class _LoanSummaryState extends State<LoanSummary> {
                           const Text("20.8%"),
                         ],
                       ),
+                      const SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text("First EMI date"),
+                          const Text("23rd June 2023"),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                elevation: 5,
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text("Annualised interest rate"),
+                          const Text("20.8%"),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text("First EMI date"),
+                          const Text("23rd June 2023"),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                elevation: 5,
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text("Annualised interest rate"),
+                          const Text("20.8%"),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text("First EMI date"),
+                          const Text("23rd June 2023"),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                elevation: 5,
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text("Annualised interest rate"),
+                          const Text("20.8%"),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text("First EMI date"),
+                          const Text("23rd June 2023"),
+                        ],
+                      ),
                     ],
                   ),
                 ),
@@ -62,7 +157,7 @@ class _LoanSummaryState extends State<LoanSummary> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: const Text("Next"),
+                  child: const Text("Get loan"),
                 ),
               ),
             ],

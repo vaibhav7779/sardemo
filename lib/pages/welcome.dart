@@ -8,8 +8,12 @@ class Welcome extends StatefulWidget {
 }
 
 class _WelcomeState extends State<Welcome> {
+  bool? check1 = false;
+
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp();
+    return Material(
+      child: ListTile(),
+    );
   }
 }
