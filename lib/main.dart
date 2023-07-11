@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:sar/palette.dart';
-import 'package:sar/pages/addressConfirm.dart';
+import 'package:sar/pages/loanSummary.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +18,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const addressConfirm(),
+      home: const LoanSummary(),
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
             backgroundColor: Color.fromRGBO(247, 182, 26, 1),
