@@ -20,26 +20,39 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: const Welcome(),
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-            backgroundColor: Color.fromRGBO(247, 182, 26, 1),
-            centerTitle: false),
+          // AppBar theme
+          appBarTheme: const AppBarTheme(
+              backgroundColor: Color.fromRGBO(247, 182, 26, 1),
+              centerTitle: false),
 
-
-
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromRGBO(184, 28, 34, 1),
-            padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
-            side: const BorderSide(
-                width: 1, color: Color.fromRGBO( 251, 25, 41, 1)),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+// Elevated Button
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromRGBO(184, 28, 34, 1),
+              padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
+              side: const BorderSide(
+                  width: 1, color: Color.fromRGBO(251, 25, 41, 1)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(24)),
+            ),
           ),
-        ),
 
+          // checkbox
+          unselectedWidgetColor: const Color.fromRGBO(225, 31, 42, 1),
+          checkboxTheme: CheckboxThemeData(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4)),
+              fillColor: MaterialStateColor.resolveWith(
+                  (states) => const Color.fromRGBO(225, 31, 42, 1))),
 
-     
-      ),
+          // title and subtitle fontSize and color
+          listTileTheme: const ListTileThemeData(
+              titleTextStyle: TextStyle(fontSize: 20),
+              subtitleTextStyle: TextStyle(fontSize: 14),
+              textColor: Colors.black),
+
+          
+          ),
     );
   }
 }
