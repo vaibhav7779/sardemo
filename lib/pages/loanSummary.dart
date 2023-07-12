@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
+import 'package:sar/pages/document-sign.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 bool isChecked = false;
@@ -268,7 +269,13 @@ class _LoanSummaryState extends State<LoanSummary> {
               Container(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DocumentSign(),
+                        ));
+                  },
                   child: const Text("Get loan"),
                 ),
               ),
