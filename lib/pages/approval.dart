@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
+import 'package:sar/pages/loanSummary.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
-enum ProductType { Gold, Silver, Dimond }
+enum ProductType { Gold, Silver, Dimond, Blank }
 
 class Approval extends StatefulWidget {
   const Approval({super.key});
@@ -31,8 +32,8 @@ class _ApprovalState extends State<Approval> {
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               BreadCrumb(
                 items: <BreadCrumbItem>[
@@ -72,39 +73,44 @@ class _ApprovalState extends State<Approval> {
                 selectedColor: Color(0xFF45C00B),
               ),
               const SizedBox(height: 20),
-              const Text(
-                "Congratulations!",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
-              ),
-              const Text(
-                "You have been approved for a",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w200),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              Column(
                 children: [
                   const Text(
-                    "loan of up to",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w200),
+                    "Congratulations!",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
                   ),
                   const Text(
-                    "₹2,00,000",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff45C00B),
-                    ),
+                    "You have been approved for a",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w200),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text(
+                        "loan of up to",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.w200),
+                      ),
+                      Text(
+                        "₹2,00,000",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff45C00B),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  const Text(
+                    "Use the slider below to choose the loan amount",
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                  ),
+                  const Text(
+                    "you want to apply for",
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                   ),
                 ],
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                "Use the slider below to choose the loan amount",
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
-              ),
-              const Text(
-                "you want to apply for",
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
               ),
               const SizedBox(height: 24),
               Card(
@@ -191,14 +197,14 @@ class _ApprovalState extends State<Approval> {
                               title: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: [
-                                  const Text(
+                                children: const [
+                                  Text(
                                     '₹6,200',
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
                                   ),
-                                  const Text(
+                                  Text(
                                     'x 48 months',
                                     style: TextStyle(
                                         fontSize: 12,
@@ -207,7 +213,7 @@ class _ApprovalState extends State<Approval> {
                                   Chip(
                                     backgroundColor: Color(0xFFB81C22),
                                     labelStyle: TextStyle(color: Colors.white),
-                                    label: const Text('Recommended'),
+                                    label: Text('Recommended'),
                                   )
                                 ],
                               ),
@@ -233,14 +239,14 @@ class _ApprovalState extends State<Approval> {
                               title: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: [
-                                  const Text(
+                                children: const [
+                                  Text(
                                     '₹7,700',
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
                                   ),
-                                  const Text(
+                                  Text(
                                     'x 36 months',
                                     style: TextStyle(
                                         fontSize: 12,
@@ -273,14 +279,14 @@ class _ApprovalState extends State<Approval> {
                               title: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: [
-                                  const Text(
+                                children: const [
+                                  Text(
                                     '₹10,100',
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
                                   ),
-                                  const Text(
+                                  Text(
                                     'x 18 months',
                                     style: TextStyle(
                                         fontSize: 12,
@@ -302,6 +308,26 @@ class _ApprovalState extends State<Approval> {
                         ],
                       ),
                     ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 40),
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      (_productType == null)
+                          ? Null
+                          : Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LoanSummary(),
+                              ),
+                            );
+                    },
+                    child: const Text("Get loan"),
                   ),
                 ),
               ),

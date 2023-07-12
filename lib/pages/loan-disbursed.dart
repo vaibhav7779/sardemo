@@ -144,8 +144,8 @@ class _LoanDisbursedState extends State<LoanDisbursed> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
-              Expanded(
+              const SizedBox(height: 30),
+              SizedBox(
                 child: Align(
                   alignment: Alignment.bottomRight,
                   child: SizedBox(
