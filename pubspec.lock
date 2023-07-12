@@ -274,9 +274,14 @@ packages:
     version: "2.1.4"
 sdks:
 <<<<<<< HEAD
+<<<<<<< HEAD
   dart: ">=3.0.0 <4.0.0"
   flutter: ">=3.10.0"
 =======
   dart: ">=2.19.6 <3.0.0"
   flutter: ">=1.17.0"
 >>>>>>> 3e90451 (Conflicts)
+=======
+  dart: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+>>>>>>> 87556af (Add Salary Account Page added)
