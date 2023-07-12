@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+import 'otp.dart';
 
 bool isChecked = false;
 
@@ -134,7 +135,13 @@ class _LoginPageState extends State<LoginPage> {
                   child: Container(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => OTPValidation(),
+                            ));
+                      },
                       child: const Text("Next"),
                     ),
                   ),
