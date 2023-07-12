@@ -39,66 +39,72 @@ class _DocumentSignState extends State<DocumentSign> {
                   child: Image.asset('assets/doc.png'),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: Container(
+                child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet<void>(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(20),
+                          ),
+                        ),
                         context: context,
                         builder: (BuildContext context) {
                           return SizedBox(
                             height: 227,
-                            child: Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: <Widget>[
-                                    const Text(
-                                      'Document Signing',
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 1, horizontal: 10),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: <Widget>[
+                                  const Text(
+                                    'DOCUMENT SIGNING',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                  const Flexible(
+                                    child: Text(
+                                      'Provide us with the following in order to setup your folio',
                                       style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w700,
+                                        fontSize: 14,
                                       ),
                                     ),
-                                    const Flexible(
-                                      child: Text(
-                                        'Provide us with the following in order to setup your folio',
-                                        style: TextStyle(
-                                          fontSize: 14,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Checkbox(
+                                        value: false,
+                                        onChanged: (value) {
+                                          setState(() {});
+                                        },
+                                      ),
+                                      const SizedBox(width: 10),
+                                      const Text(
+                                        "I accept and consent to the terms and conditions",
+                                        style: const TextStyle(
+                                          fontSize: 12,
                                           fontWeight: FontWeight.w400,
                                         ),
                                       ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Checkbox(
-                                          value: false,
-                                          onChanged: (value) {
-                                            setState(() {});
-                                          },
-                                        ),
-                                        const SizedBox(width: 10),
-                                        const Text(
-                                          "I agree my details are correct",
-                                          style: const TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    ElevatedButton(
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: double.infinity,
+                                    child: ElevatedButton(
+                                      onPressed: () {},
                                       child: const Text(
-                                          'Accept and sign document'),
-                                      onPressed: () => Navigator.pop(context),
+                                          "Accept and sign document"),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                           );
