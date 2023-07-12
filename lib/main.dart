@@ -23,6 +23,10 @@ class _MyAppState extends State<MyApp> {
         appBarTheme: const AppBarTheme(
             backgroundColor: Color.fromRGBO(247, 182, 26, 1),
             centerTitle: false),
+        radioTheme: RadioThemeData(
+          fillColor: MaterialStateColor.resolveWith(
+              (states) => Color.fromRGBO(251, 25, 41, 1)),
+        ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color.fromRGBO(184, 28, 34, 1),
