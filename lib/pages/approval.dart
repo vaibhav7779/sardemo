@@ -317,16 +317,16 @@ class _ApprovalState extends State<Approval> {
                 child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {
-                      (_productType == null)
-                          ? Null
-                          : Navigator.push(
+                    onPressed: (_productType == null)
+                        ? null
+                        : () {
+                            Navigator.push(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => LoanSummary(),
                               ),
                             );
-                    },
+                          },
                     child: const Text("Get loan"),
                   ),
                 ),
