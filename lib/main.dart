@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:sar/pages/approval.dart';
-// import 'package:sar/pages/approval.dart';
+import 'package:sar/pages/addAccount.dart';
+// import 'package:sar/pages/login.dart';
+// import 'package:sar/pages/basicInfo.dart';
+//import 'package:sar/pages/loanSummary.dart';
+import 'package:sar/pages/login.dart';
+import 'package:sar/pages/welcome.dart';
 import 'package:sar/pages/loan-disbursed.dart';
 // import 'package:sar/pages/loan-disbursed.dart';
 // import 'package:sar/pages/document-sign.dart';
@@ -31,7 +35,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Approval(),
+      home: LoginPage(),
       theme: ThemeData(
         // AppBar theme
         appBarTheme: const AppBarTheme(
@@ -43,10 +47,15 @@ class _MyAppState extends State<MyApp> {
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color.fromRGBO(184, 28, 34, 1),
             padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
-            // side: const BorderSide(color: Color.fromRGBO(251, 25, 41, 1)),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
           ),
+        ),
+
+// Text Button
+        textButtonTheme: TextButtonThemeData(
+          style: ElevatedButton.styleFrom(
+              foregroundColor: Color.fromRGBO(255, 31, 41, 1)),
         ),
 
 // checkbox theme
