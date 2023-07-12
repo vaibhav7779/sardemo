@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'package:sar/pages/old_addAccount.dart';
+// import 'package:sar/pages/add_bank.dart';
 // import 'package:sar/pages/addAccount.dart';
 // import 'package:sar/pages/basicInfo.dart';
 // import 'package:sar/pages/login.dart';
@@ -89,7 +91,10 @@ class _MyAppState extends State<MyApp> {
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
         ),
-
+        radioTheme: RadioThemeData(
+          fillColor:
+              MaterialStateColor.resolveWith((states) => Color(0xFFE11F2A)),
+        ), //
 // cursor color
         textSelectionTheme: const TextSelectionThemeData(
           cursorColor: Colors.black,

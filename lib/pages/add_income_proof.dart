@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
+import 'package:sar/pages/approval.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 class IncomeVerification extends StatefulWidget {
@@ -231,7 +232,14 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                   child: Container(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Approval(),
+                          ),
+                        );
+                      },
                       child: const Text("Next"),
                     ),
                   ),

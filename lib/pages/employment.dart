@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
-import 'package:sar/pages/addAccount.dart';
+import 'package:sar/pages/add_bank.dart';
+// import 'package:sar/pages/old_addAccount.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 bool isChecked = false;
@@ -215,7 +216,7 @@ class _EmploymentState extends State<Employment> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => AddAccount(),
+                        builder: (context) => AddBankAccount(),
                       ),
                     );
                   },
