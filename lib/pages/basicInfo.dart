@@ -71,9 +71,9 @@ class _BasicInformationState extends State<BasicInformation> {
                 ),
               ),
               const SizedBox(height: 20),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Text("Personal Details"), Text("2/11")],
+                children: const [Text("Personal Details"), Text("2/11")],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
