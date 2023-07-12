@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sar/pages/basicInfo.dart';
+import 'package:sar/pages/employment.dart';
 // import 'package:sar/palette.dart';
 // import 'package:sar/pages/addressConfirm.dart';
 import 'package:sar/pages/login.dart';
@@ -23,7 +24,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OTPValidation(),
+      home: Employment(),
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
             backgroundColor: Color.fromRGBO(247, 182, 26, 1),
@@ -58,6 +59,7 @@ class _MyAppState extends State<MyApp> {
             borderSide: BorderSide(color: Colors.black),
           ),
         ),
+
 // cursor color
         textSelectionTheme: const TextSelectionThemeData(
           cursorColor: Colors.black,
