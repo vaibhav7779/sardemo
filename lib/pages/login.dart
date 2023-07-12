@@ -101,10 +101,8 @@ class _LoginPageState extends State<LoginPage> {
                         autofocus: false,
                         decoration: const InputDecoration(
                           labelText: "Your Name",
-                          hintText: "Your Name",
+                          hintText: "Enter Your Name",
                           border: OutlineInputBorder(),
-                          filled: true, //<-- SEE HERE
-                          fillColor: Color(0xFFF5F5F5),
                         ),
                       ),
                       const SizedBox(height: 20),
@@ -112,10 +110,8 @@ class _LoginPageState extends State<LoginPage> {
                         autofocus: false,
                         decoration: const InputDecoration(
                           labelText: "Mobile Number",
-                          hintText: "Mobile Number",
+                          hintText: "Enter Mobile Number",
                           border: OutlineInputBorder(),
-                          filled: true, //<-- SEE HERE
-                          fillColor: Color(0xFFF5F5F5),
                         ),
                       ),
                       const SizedBox(height: 20),

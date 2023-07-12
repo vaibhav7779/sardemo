@@ -63,8 +63,16 @@ class _MyAppState extends State<MyApp> {
 
         // text box outline color
         inputDecorationTheme: const InputDecorationTheme(
+          filled: false,
+          labelStyle: TextStyle(
+            color: Color(0xFFBABABA),
+          ),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.black),
+            borderRadius: BorderRadius.all(Radius.circular(8)),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
         ),
 

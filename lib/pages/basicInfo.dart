@@ -111,8 +111,6 @@ class _BasicInformationState extends State<BasicInformation> {
                         decoration: const InputDecoration(
                           labelText: "Name",
                           border: OutlineInputBorder(),
-                          filled: true, //<-- SEE HERE
-                          fillColor: Color(0xFFF5F5F5),
                         ),
                         readOnly: true,
                       ),
