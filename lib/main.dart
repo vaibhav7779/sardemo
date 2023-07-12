@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sar/pages/document-sign.dart';
 // import 'package:sar/pages/login.dart';
 // import 'package:sar/pages/basicInfo.dart';
 //import 'package:sar/pages/loanSummary.dart';
@@ -26,7 +27,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: DocumentSign(),
       theme: ThemeData(
         // AppBar theme
         appBarTheme: const AppBarTheme(
