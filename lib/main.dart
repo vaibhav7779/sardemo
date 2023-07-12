@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:sar/pages/login.dart';
 // import 'package:sar/pages/basicInfo.dart';
-import 'package:sar/pages/loanSummary.dart';
+//import 'package:sar/pages/loanSummary.dart';
 import 'package:sar/pages/login.dart';
 // import 'package:sar/palette.dart';
 // import 'package:sar/pages/addressConfirm.dart';
@@ -67,6 +67,7 @@ class _MyAppState extends State<MyApp> {
             borderSide: BorderSide(color: Colors.black),
           ),
         ),
+
 // cursor color
         textSelectionTheme: const TextSelectionThemeData(
           cursorColor: Colors.black,
