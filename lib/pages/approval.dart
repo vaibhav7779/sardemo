@@ -293,7 +293,7 @@ class _ApprovalState extends State<Approval> {
                                         fontWeight: FontWeight.w400),
                                   ),
                                   SizedBox(
-                                    width: 90,
+                                    width: 120,
                                   )
                                 ],
                               ),
@@ -327,7 +327,7 @@ class _ApprovalState extends State<Approval> {
                               ),
                             );
                           },
-                    child: const Text("Get loan"),
+                    child: const Text("Confirm loan details"),
                   ),
                 ),
               ),

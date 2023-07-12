@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sar/pages/addAccount.dart';
+import 'package:sar/pages/basicInfo.dart';
 // import 'package:sar/pages/login.dart';
 // import 'package:sar/pages/basicInfo.dart';
 //import 'package:sar/pages/loanSummary.dart';
