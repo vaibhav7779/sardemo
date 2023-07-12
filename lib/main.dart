@@ -46,17 +46,18 @@ class _MyAppState extends State<MyApp> {
 // checkbox theme
         unselectedWidgetColor: const Color.fromRGBO(225, 31, 42, 1),
         checkboxTheme: CheckboxThemeData(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-            fillColor: MaterialStateColor.resolveWith(
-                (states) => const Color.fromRGBO(225, 31, 42, 1))),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+          fillColor: MaterialStateColor.resolveWith(
+            (states) => const Color.fromRGBO(225, 31, 42, 1),
+          ),
+        ),
 
-        // // title and subtitle fontSize and color
-        // listTileTheme: const ListTileThemeData(
-        //   titleTextStyle: TextStyle(fontSize: 20),
-        //   subtitleTextStyle: TextStyle(fontSize: 14),
-        //   textColor: Colors.black,
-        // ),
+        // title and subtitle fontSize and color
+        listTileTheme: const ListTileThemeData(
+          // titleTextStyle: TextStyle(fontSize: 20),
+          // subtitleTextStyle: TextStyle(fontSize: 14),
+          textColor: Colors.black,
+        ),
 
         // text box outline color
         inputDecorationTheme: const InputDecorationTheme(
