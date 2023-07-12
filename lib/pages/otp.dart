@@ -4,6 +4,7 @@ import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/style.dart';
+import 'basicInfo.dart';
 
 bool isChecked = false;
 
@@ -137,7 +138,12 @@ class _OTPValidationState extends State<OTPValidation> {
                   child: Container(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BasicInformation()));
+                      },
                       child: const Text("Next"),
                     ),
                   ),

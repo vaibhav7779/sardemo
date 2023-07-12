@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:sar/pages/login.dart';
 // import 'package:sar/pages/basicInfo.dart';
 import 'package:sar/pages/loanSummary.dart';
+import 'package:sar/pages/login.dart';
 // import 'package:sar/palette.dart';
 // import 'package:sar/pages/addressConfirm.dart';
 // import 'package:sar/pages/login.dart';
@@ -25,7 +26,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoanSummary(),
+      home: LoginPage(),
       theme: ThemeData(
         // AppBar theme
         appBarTheme: const AppBarTheme(
@@ -43,6 +44,7 @@ class _MyAppState extends State<MyApp> {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
           ),
         ),
+
 // checkbox theme
         unselectedWidgetColor: const Color.fromRGBO(225, 31, 42, 1),
         checkboxTheme: CheckboxThemeData(
