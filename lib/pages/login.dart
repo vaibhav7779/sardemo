@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+import 'otp.dart';
 
 bool isChecked = false;
 
-class AddressConfirm extends StatefulWidget {
-  const AddressConfirm({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<AddressConfirm> createState() => _AddressConfirmState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-bool detailsRadio = false;
-bool temrsRadio = false;
-
-class _AddressConfirmState extends State<AddressConfirm> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,27 +61,20 @@ class _AddressConfirmState extends State<AddressConfirm> {
                 divider: const Icon(Icons.chevron_right),
               ),
               const SizedBox(height: 30),
-              const Text(
-                "Welcome , Amit!",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
               const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [Text("Personal Details"), Text("2/11")],
+                children: const [Text("Name and Email"), Text("1/11")],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
                 totalSteps: 11,
-                currentStep: 2,
+                currentStep: 1,
                 selectedColor: Color(0xFF45C00B),
               ),
               const SizedBox(height: 24),
               const Text(
-                "Address",
+                "Verify your personal details",
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
@@ -101,92 +92,59 @@ class _AddressConfirmState extends State<AddressConfirm> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       const Text(
-                        "Please confirm your address",
+                        "Please enter accurate information that matches your KYC documents.",
                         style: const TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w400),
                       ),
                       const SizedBox(height: 20),
                       TextFormField(
                         autofocus: false,
-                        initialValue:
-                            " House No.- 123 Sector- 10 Vasant Vihar, Delhi, 110011",
                         decoration: const InputDecoration(
-                          labelText: "Communication Address",
+                          labelText: "Your Name",
+                          hintText: "Enter Your Name",
                           border: OutlineInputBorder(),
                           filled: true, //<-- SEE HERE
                           fillColor: Color(0xFFF5F5F5),
                         ),
-                        readOnly: true,
-                        maxLines: 3,
                       ),
                       const SizedBox(height: 20),
                       TextFormField(
                         autofocus: false,
-                        initialValue: "helloamitXX@gmail.com",
                         decoration: const InputDecoration(
-                          labelText: "Email Address",
+                          labelText: "Mobile Number",
+                          hintText: "Enter Mobile Number",
                           border: OutlineInputBorder(),
                           filled: true, //<-- SEE HERE
                           fillColor: Color(0xFFF5F5F5),
                         ),
-                        readOnly: true,
                       ),
                       const SizedBox(height: 20),
-                      const Divider(),
-                      const SizedBox(height: 20),
-                      Row(
-                        children: [
-                          Checkbox(
-                            value: detailsRadio,
-                            onChanged: (value) {
-                              setState(() {
-                                detailsRadio = value!;
-                              });
-                            },
-                          ),
-                          const SizedBox(width: 10),
-                          const Text(
-                            "I agree my details are correct",
-                            style: const TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 20),
-                      Row(
-                        children: [
-                          Checkbox(
-                            value: temrsRadio,
-                            onChanged: (value) {
-                              setState(() {
-                                temrsRadio = value!;
-                              });
-                            },
-                          ),
-                          const SizedBox(width: 10),
-                          const Flexible(
-                            child: const Text(
-                              "I agree to the Terms and Conditions and Privacy, and give my consent to Saraswat Bank as the lender to collect, store and verify my credit report from credit bureaus and KYC details (from CERSA) for processing loan application.",
-                              style: const TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ),
-                        ],
+                      const Padding(
+                        padding: EdgeInsets.only(left: 8.0),
+                        child: Text(
+                            "*We will be sending an OTP to verify your details"),
                       ),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
-              Container(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Text("Next"),
+              const SizedBox(height: 60),
+              Center(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => OTPValidation(),
+                            ));
+                      },
+                      child: const Text("Next"),
+                    ),
+                  ),
                 ),
               ),
             ],
