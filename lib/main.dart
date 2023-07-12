@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:sar/pages/addressConfirm.dart';
+import 'package:sar/pages/basicInfo.dart';
+import 'package:sar/pages/employment.dart';
 import 'package:sar/pages/loan-disbursed.dart';
 // import 'package:sar/pages/loan-disbursed.dart';
 // import 'package:sar/pages/document-sign.dart';
 // import 'package:sar/pages/login.dart';
 // import 'package:sar/pages/basicInfo.dart';
 import 'package:sar/pages/loanSummary.dart';
+import 'package:sar/pages/login.dart';
+import 'package:sar/pages/thirdparty.dart';
+import 'package:sar/pages/thirdparty2.dart';
 // import 'package:sar/pages/login.dart';
 // import 'package:sar/palette.dart';
 // import 'package:sar/pages/addressConfirm.dart';
@@ -12,6 +18,7 @@ import 'package:sar/pages/loanSummary.dart';
 // import 'package:sar/pages/otp.dart';
 // import 'package:sar/pages/otp.dart';
 // import 'package:sar/utils/routes.dart';
+import 'package:sar/pages/thirdparty2.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,7 +36,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoanDisbursed(),
+      home: third(),
       theme: ThemeData(
         // AppBar theme
         appBarTheme: const AppBarTheme(
