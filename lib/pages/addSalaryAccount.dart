@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
-// import 'package:sar/pages/income_verification.dart';
+import 'package:sar/pages/income_verification.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 bool isChecked = false;
 
-class AddAccount extends StatefulWidget {
-  const AddAccount({super.key});
+class AddSalaryAccount extends StatefulWidget {
+  const AddSalaryAccount({super.key});
 
   @override
-  State<AddAccount> createState() => _AddAccountState();
+  State<AddSalaryAccount> createState() => _AddSalaryAccountState();
 }
 
-class _AddAccountState extends State<AddAccount> {
+class _AddSalaryAccountState extends State<AddSalaryAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -316,7 +316,13 @@ class _AddAccountState extends State<AddAccount> {
                   child: Container(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => IncomeVerification(),
+                            ));
+                      },
                       child: const Text("Next"),
                     ),
                   ),
