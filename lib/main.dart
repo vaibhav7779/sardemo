@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sar/pages/approval.dart';
 import 'package:sar/pages/loan-disbursed.dart';
 // import 'package:sar/pages/loan-disbursed.dart';
 // import 'package:sar/pages/document-sign.dart';
@@ -29,7 +30,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoanDisbursed(),
+      home: Approval(),
       theme: ThemeData(
         // AppBar theme
         appBarTheme: const AppBarTheme(
