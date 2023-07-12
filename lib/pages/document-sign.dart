@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sar/pages/loan-disbursed.dart';
 
 class DocumentSign extends StatefulWidget {
   const DocumentSign({super.key});
@@ -6,6 +7,8 @@ class DocumentSign extends StatefulWidget {
   @override
   State<DocumentSign> createState() => _DocumentSignState();
 }
+
+bool isButtonAction = false;
 
 class _DocumentSignState extends State<DocumentSign> {
   @override
@@ -47,7 +50,7 @@ class _DocumentSignState extends State<DocumentSign> {
                   child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet<void>(
-                        shape: RoundedRectangleBorder(
+                        shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.vertical(
                             top: Radius.circular(20),
                           ),
@@ -70,26 +73,26 @@ class _DocumentSignState extends State<DocumentSign> {
                                       fontWeight: FontWeight.w700,
                                     ),
                                   ),
-                                  const Flexible(
-                                    child: Text(
-                                      'Provide us with the following in order to setup your folio',
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                      ),
+                                  const Text(
+                                    'Provide us with the following in order to setup your folio',
+                                    style: TextStyle(
+                                      fontSize: 14,
                                     ),
                                   ),
                                   Row(
                                     children: [
                                       Checkbox(
-                                        value: false,
+                                        value: true,
                                         onChanged: (value) {
-                                          setState(() {});
+                                          setState(() {
+                                            isButtonAction = value!;
+                                          });
                                         },
                                       ),
                                       const SizedBox(width: 10),
                                       const Text(
                                         "I accept and consent to the terms and conditions",
-                                        style: const TextStyle(
+                                        style: TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.w400,
                                         ),
@@ -99,7 +102,17 @@ class _DocumentSignState extends State<DocumentSign> {
                                   SizedBox(
                                     width: double.infinity,
                                     child: ElevatedButton(
-                                      onPressed: () {},
+                                      onPressed: false
+                                          ? null
+                                          : () {
+                                              //LoanDisbursed
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        LoanDisbursed(),
+                                                  ));
+                                            },
                                       child: const Text(
                                           "Accept and sign document"),
                                     ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
+import 'package:sar/pages/approval.dart';
 import 'package:sar/pages/income_verification.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
@@ -320,7 +321,7 @@ class _AddAccountState extends State<AddAccount> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => IncomeVerification(),
+                              builder: (context) => Approval(),
                             ));
                       },
                       child: const Text("Next"),
