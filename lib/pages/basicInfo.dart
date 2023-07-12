@@ -70,9 +70,9 @@ class _BasicInformationState extends State<BasicInformation> {
                 ),
               ),
               const SizedBox(height: 20),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [Text("Personal Details"), Text("2/11")],
+                children: [Text("Personal Details"), Text("2/11")],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
@@ -83,7 +83,7 @@ class _BasicInformationState extends State<BasicInformation> {
               const SizedBox(height: 24),
               const Text(
                 "Personal Details",
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
                 ),
@@ -101,7 +101,7 @@ class _BasicInformationState extends State<BasicInformation> {
                     children: [
                       const Text(
                         "We have fetched below details from our records",
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w400),
                       ),
                       const SizedBox(height: 20),
@@ -169,12 +169,12 @@ class _BasicInformationState extends State<BasicInformation> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 32.0,
               ),
               const Text(
                 "Address",
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
                 ),
@@ -192,7 +192,7 @@ class _BasicInformationState extends State<BasicInformation> {
                     children: [
                       const Text(
                         "Please confirm your address",
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w400),
                       ),
                       const SizedBox(height: 20),
@@ -237,7 +237,7 @@ class _BasicInformationState extends State<BasicInformation> {
                           const SizedBox(width: 10),
                           const Text(
                             "I agree my details are correct",
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
                             ),
@@ -257,9 +257,9 @@ class _BasicInformationState extends State<BasicInformation> {
                           ),
                           const SizedBox(width: 10),
                           const Flexible(
-                            child: const Text(
+                            child: Text(
                               "I agree to the Terms and Conditions and Privacy, and give my consent to Saraswat Bank as the lender to collect, store and verify my credit report from credit bureaus and KYC details (from CERSA) for processing loan application.",
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -275,7 +275,89 @@ class _BasicInformationState extends State<BasicInformation> {
               Container(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showModalBottomSheet<void>(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return SizedBox(
+                          height: 270,
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  const Text(
+                                    'VERIFY YOUR DETAILS',
+                                    style: TextStyle(fontSize: 10),
+                                  ),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Enter OTP sent via mail to: amit.k@placebo.in'),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  TextFormField(
+                                    autofocus: false,
+                                    initialValue: "123456",
+                                    decoration: const InputDecoration(
+                                      suffix: Text(
+                                        "Resend OTP",
+                                        style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(233, 122, 42, 1),
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      labelText: "Enter OTP",
+
+                                      labelStyle: TextStyle(color: Colors.grey),
+
+                                      border: OutlineInputBorder(),
+                                      filled: true, //<-- SEE HERE
+                                      fillColor: Colors.white,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  Center(
+                                    child: Align(
+                                      alignment: Alignment.bottomCenter,
+                                      child: Container(
+                                        width: double.infinity,
+                                        child: ElevatedButton(
+                                          onPressed: () {},
+                                          child: const Text("Next"),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  TextButton(
+                                      onPressed: () {},
+                                      child: const Text(
+                                        "or verify via link",
+                                        style: TextStyle(
+                                            color:
+                                                Color.fromRGBO(233, 122, 42, 1),
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ))
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  },
                   child: const Text("Next"),
                 ),
               ),

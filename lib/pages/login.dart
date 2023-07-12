@@ -103,8 +103,8 @@ class _LoginPageState extends State<LoginPage> {
                           labelText: "Your Name",
                           hintText: "Your Name",
                           border: OutlineInputBorder(),
-                          filled: true, //<-- SEE HERE
-                          fillColor: Color(0xFFF5F5F5),
+                          // filled: true, //<-- SEE HERE
+                          // fillColor: Color(0xFFF5F5F5),
                         ),
                       ),
                       const SizedBox(height: 20),
@@ -114,8 +114,8 @@ class _LoginPageState extends State<LoginPage> {
                           labelText: "Mobile Number",
                           hintText: "Mobile Number",
                           border: OutlineInputBorder(),
-                          filled: true, //<-- SEE HERE
-                          fillColor: Color(0xFFF5F5F5),
+                          // filled: true, //<-- SEE HERE
+                          // fillColor: Color(0xFFF5F5F5),
                         ),
                       ),
                       const SizedBox(height: 20),
