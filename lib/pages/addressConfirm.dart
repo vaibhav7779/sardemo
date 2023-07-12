@@ -4,9 +4,17 @@ import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 bool isChecked = false;
 
-class addressConfirm extends StatelessWidget {
-  const addressConfirm({super.key});
+class AddressConfirm extends StatefulWidget {
+  const AddressConfirm({super.key});
 
+  @override
+  State<AddressConfirm> createState() => _AddressConfirmState();
+}
+
+bool detailsRadio = false;
+bool temrsRadio = false;
+
+class _AddressConfirmState extends State<AddressConfirm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,8 +137,12 @@ class addressConfirm extends StatelessWidget {
                       Row(
                         children: [
                           Checkbox(
-                            value: false,
-                            onChanged: (value) {},
+                            value: detailsRadio,
+                            onChanged: (value) {
+                              setState(() {
+                                detailsRadio = value!;
+                              });
+                            },
                           ),
                           const SizedBox(width: 10),
                           const Text(
@@ -146,8 +158,12 @@ class addressConfirm extends StatelessWidget {
                       Row(
                         children: [
                           Checkbox(
-                            value: false,
-                            onChanged: (value) {},
+                            value: temrsRadio,
+                            onChanged: (value) {
+                              setState(() {
+                                temrsRadio = value!;
+                              });
+                            },
                           ),
                           const SizedBox(width: 10),
                           const Flexible(
