@@ -1,26 +1,7 @@
 import 'package:flutter/material.dart';
-// import 'package:sar/pages/old_addAccount.dart';
-// import 'package:sar/pages/add_bank.dart';
-// import 'package:sar/pages/addAccount.dart';
-// import 'package:sar/pages/basicInfo.dart';
-// import 'package:sar/pages/login.dart';
-// import 'package:sar/pages/basicInfo.dart';
-// //import 'package:sar/pages/loanSummary.dart';
-// import 'package:sar/pages/login.dart';
-// import 'package:sar/pages/welcome.dart';
-// import 'package:sar/pages/loan-disbursed.dart';
-// import 'package:sar/pages/loan-disbursed.dart';
-// import 'package:sar/pages/document-sign.dart';
-// import 'package:sar/pages/login.dart';
-// import 'package:sar/pages/basicInfo.dart';
-// import 'package:sar/pages/loanSummary.dart';
+
 import 'package:sar/pages/login.dart';
-// import 'package:sar/palette.dart';
-// import 'package:sar/pages/addressConfirm.dart';
-// import 'package:sar/pages/login.dart';
-// import 'package:sar/pages/otp.dart';
-// import 'package:sar/pages/otp.dart';
-// import 'package:sar/utils/routes.dart';
+import 'package:sar/pages/palette.dart';
 
 void main() {
   runApp(MyApp());
@@ -41,6 +22,8 @@ class _MyAppState extends State<MyApp> {
       home: LoginPage(),
       theme: ThemeData(
         // AppBar theme
+        // primarySwatch: buildMaterialColor(Color(0xFFF7B61A)),
+        primaryColor: Color(0xffF7B61A),
         appBarTheme: const AppBarTheme(
             backgroundColor: Color.fromRGBO(247, 182, 26, 1),
             centerTitle: false),
