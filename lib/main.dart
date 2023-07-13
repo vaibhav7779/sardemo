@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sar/pages/add_bank.dart';
 
 import 'package:sar/pages/login.dart';
 
@@ -18,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: AddAccount(),
       theme: ThemeData(
         // AppBar theme
         // primarySwatch: buildMaterialColor(Color(0xFFF7B61A)),

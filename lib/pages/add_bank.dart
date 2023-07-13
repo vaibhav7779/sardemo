@@ -17,7 +17,17 @@ class AddAccount extends StatefulWidget {
 
 class _AddAccountState extends State<AddAccount> {
   String selectBank = 'Select Bank';
-
+  var itemsOccupation = [
+    'Select Bank',
+    'HDFC',
+    'ICICI',
+    'SBI',
+    'Union Bank',
+    'Axis Bank',
+    'Bank of Baroda',
+    'IDBI Bank',
+    'Kotak Mahindra Bank'
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,17 +133,8 @@ class _AddAccountState extends State<AddAccount> {
                               selectBank = newValue!;
                             });
                           },
-                          items: <String>[
-                            'Select Bank',
-                            'HDFC',
-                            'ICICI',
-                            'SBI',
-                            'Union Bank',
-                            'Axis Bank',
-                            'Bank of Baroda',
-                            'IDBI Bank',
-                            'Kotak Mahindra Bank'
-                          ].map<DropdownMenuItem<String>>((String value) {
+                          items: itemsOccupation
+                              .map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
                               child: Text(
@@ -161,91 +162,143 @@ class _AddAccountState extends State<AddAccount> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Card(
-                            elevation: 4,
-                            child: SizedBox(
-                              // height: 80,
-                              width: 68,
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset('assets/hdfc.png'),
-                                  ),
-                                  const Text(
-                                    "HDFC",
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                  const SizedBox(
-                                    height: 8,
-                                  )
-                                ],
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectBank = 'HDFC';
+                              });
+                            },
+                            child: Card(
+                              shape: (selectBank == 'HDFC')
+                                  ? RoundedRectangleBorder(
+                                      side: new BorderSide(
+                                          color: Color(0xffF7B61A), width: 4.0),
+                                      borderRadius: BorderRadius.circular(10.0))
+                                  : null,
+                              elevation: 4,
+                              child: SizedBox(
+                                // height: 80,
+                                width: 68,
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(15.0),
+                                      child: Image.asset('assets/hdfc.png'),
+                                    ),
+                                    const Text(
+                                      "HDFC",
+                                      style: TextStyle(fontSize: 12),
+                                    ),
+                                    const SizedBox(
+                                      height: 8,
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          Card(
-                            elevation: 4,
-                            child: SizedBox(
-                              // height: 80,
-                              width: 68,
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset('assets/icici.png'),
-                                  ),
-                                  const Text(
-                                    "ICICI",
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                  const SizedBox(
-                                    height: 8,
-                                  )
-                                ],
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectBank = 'ICICI';
+                              });
+                            },
+                            child: Card(
+                              shape: (selectBank == 'ICICI')
+                                  ? RoundedRectangleBorder(
+                                      side: new BorderSide(
+                                          color: Color(0xffF7B61A), width: 4.0),
+                                      borderRadius: BorderRadius.circular(10.0))
+                                  : null,
+                              elevation: 4,
+                              child: SizedBox(
+                                // height: 80,
+                                width: 68,
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(15.0),
+                                      child: Image.asset('assets/icici.png'),
+                                    ),
+                                    const Text(
+                                      "ICICI",
+                                      style: TextStyle(fontSize: 12),
+                                    ),
+                                    const SizedBox(
+                                      height: 8,
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          Card(
-                            elevation: 4,
-                            child: SizedBox(
-                              // height: 80,
-                              width: 68,
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset('assets/sbi.png'),
-                                  ),
-                                  const Text(
-                                    "SBI",
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                  const SizedBox(
-                                    height: 8,
-                                  )
-                                ],
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectBank = 'SBI';
+                              });
+                            },
+                            child: Card(
+                              shape: (selectBank == 'SBI')
+                                  ? RoundedRectangleBorder(
+                                      side: new BorderSide(
+                                          color: Color(0xffF7B61A), width: 4.0),
+                                      borderRadius: BorderRadius.circular(10.0))
+                                  : null,
+                              elevation: 4,
+                              child: SizedBox(
+                                // height: 80,
+                                width: 68,
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(15.0),
+                                      child: Image.asset('assets/sbi.png'),
+                                    ),
+                                    const Text(
+                                      "SBI",
+                                      style: TextStyle(fontSize: 12),
+                                    ),
+                                    const SizedBox(
+                                      height: 8,
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          Card(
-                            elevation: 4,
-                            child: SizedBox(
-                              // height: 80,
-                              width: 68,
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset('assets/union.png'),
-                                  ),
-                                  const Text(
-                                    "Union Bank",
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                  const SizedBox(
-                                    height: 8,
-                                  )
-                                ],
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectBank = 'Union Bank';
+                              });
+                            },
+                            child: Card(
+                              shape: (selectBank == 'Union Bank')
+                                  ? RoundedRectangleBorder(
+                                      side: new BorderSide(
+                                          color: Color(0xffF7B61A), width: 4.0),
+                                      borderRadius: BorderRadius.circular(10.0))
+                                  : null,
+                              elevation: 4,
+                              child: SizedBox(
+                                // height: 80,
+                                width: 68,
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(15.0),
+                                      child: Image.asset('assets/union.png'),
+                                    ),
+                                    const Text(
+                                      "Union Bank",
+                                      style: TextStyle(fontSize: 12),
+                                    ),
+                                    const SizedBox(
+                                      height: 8,
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -257,91 +310,143 @@ class _AddAccountState extends State<AddAccount> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Card(
-                            elevation: 4,
-                            child: SizedBox(
-                              // height: 80,
-                              width: 68,
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset('assets/axis.png'),
-                                  ),
-                                  const Text(
-                                    "Axis Bank",
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                  const SizedBox(
-                                    height: 8,
-                                  )
-                                ],
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectBank = 'Axis Bank';
+                              });
+                            },
+                            child: Card(
+                              shape: (selectBank == 'Axis Bank')
+                                  ? RoundedRectangleBorder(
+                                      side: new BorderSide(
+                                          color: Color(0xffF7B61A), width: 4.0),
+                                      borderRadius: BorderRadius.circular(10.0))
+                                  : null,
+                              elevation: 4,
+                              child: SizedBox(
+                                // height: 80,
+                                width: 68,
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(15.0),
+                                      child: Image.asset('assets/axis.png'),
+                                    ),
+                                    const Text(
+                                      "Axis Bank",
+                                      style: TextStyle(fontSize: 12),
+                                    ),
+                                    const SizedBox(
+                                      height: 8,
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          Card(
-                            elevation: 4,
-                            child: SizedBox(
-                              // height: 80,
-                              width: 68,
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset('assets/bob.png'),
-                                  ),
-                                  const Text(
-                                    "Bank of Ba..",
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                  const SizedBox(
-                                    height: 8,
-                                  )
-                                ],
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectBank = 'Bank of Baroda';
+                              });
+                            },
+                            child: Card(
+                              shape: (selectBank == 'Bank of Baroda')
+                                  ? RoundedRectangleBorder(
+                                      side: new BorderSide(
+                                          color: Color(0xffF7B61A), width: 4.0),
+                                      borderRadius: BorderRadius.circular(10.0))
+                                  : null,
+                              elevation: 4,
+                              child: SizedBox(
+                                // height: 80,
+                                width: 68,
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(15.0),
+                                      child: Image.asset('assets/bob.png'),
+                                    ),
+                                    const Text(
+                                      "Bank of Ba..",
+                                      style: TextStyle(fontSize: 12),
+                                    ),
+                                    const SizedBox(
+                                      height: 8,
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          Card(
-                            elevation: 4,
-                            child: SizedBox(
-                              // height: 80,
-                              width: 68,
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset('assets/idbi.png'),
-                                  ),
-                                  const Text(
-                                    "IDBI Bank",
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                  const SizedBox(
-                                    height: 8,
-                                  )
-                                ],
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectBank = 'IDBI Bank';
+                              });
+                            },
+                            child: Card(
+                              shape: (selectBank == 'IDBI Bank')
+                                  ? RoundedRectangleBorder(
+                                      side: new BorderSide(
+                                          color: Color(0xffF7B61A), width: 4.0),
+                                      borderRadius: BorderRadius.circular(10.0))
+                                  : null,
+                              elevation: 4,
+                              child: SizedBox(
+                                // height: 80,
+                                width: 68,
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(15.0),
+                                      child: Image.asset('assets/idbi.png'),
+                                    ),
+                                    const Text(
+                                      "IDBI Bank",
+                                      style: TextStyle(fontSize: 12),
+                                    ),
+                                    const SizedBox(
+                                      height: 8,
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          Card(
-                            elevation: 4,
-                            child: SizedBox(
-                              // height: 80,
-                              width: 68,
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset('assets/kotak.png'),
-                                  ),
-                                  const Text(
-                                    "Kotak Ma...",
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                  const SizedBox(
-                                    height: 8,
-                                  )
-                                ],
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectBank = 'Kotak Mahindra Bank';
+                              });
+                            },
+                            child: Card(
+                              shape: (selectBank == 'Kotak Mahindra Bank')
+                                  ? RoundedRectangleBorder(
+                                      side: new BorderSide(
+                                          color: Color(0xffF7B61A), width: 4.0),
+                                      borderRadius: BorderRadius.circular(10.0))
+                                  : null,
+                              elevation: 4,
+                              child: SizedBox(
+                                // height: 80,
+                                width: 68,
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(15.0),
+                                      child: Image.asset('assets/kotak.png'),
+                                    ),
+                                    const Text(
+                                      "Kotak Ma...",
+                                      style: TextStyle(fontSize: 12),
+                                    ),
+                                    const SizedBox(
+                                      height: 8,
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -358,13 +463,15 @@ class _AddAccountState extends State<AddAccount> {
                   child: Container(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => IncomeVerification(),
-                            ));
-                      },
+                      onPressed: (selectBank == 'Select Bank')
+                          ? null
+                          : () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => IncomeVerification(),
+                                  ));
+                            },
                       child: const Text("Next"),
                     ),
                   ),
