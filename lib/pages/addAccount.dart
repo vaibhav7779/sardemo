@@ -14,6 +14,8 @@ class AddAccount extends StatefulWidget {
 }
 
 class _AddAccountState extends State<AddAccount> {
+  String selectBank = 'Select Bank';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,20 +92,57 @@ class _AddAccountState extends State<AddAccount> {
                             fontSize: 14, fontWeight: FontWeight.w400),
                       ),
                       const SizedBox(height: 20),
-                      TextFormField(
-                        autofocus: false,
-                        decoration: const InputDecoration(
-                          suffix: Icon(
-                            Icons.search,
-                            color: Color.fromRGBO(233, 122, 42, 1),
+                      SizedBox(
+                        height: 50,
+                        child: DropdownButtonFormField(
+                          decoration: const InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.black, width: 1),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.black, width: 1),
+                            ),
+                            filled: true,
+                            fillColor: Colors.white,
+                            labelText: 'Income Type',
+                            labelStyle: TextStyle(color: Colors.grey),
+                            suffixIcon: Icon(
+                              Icons.search,
+                              color: Color.fromRGBO(233, 122, 42, 1),
+                            ),
                           ),
-                          labelText: "Choose Bank",
-                          hintText: "Select Bank",
-                          border: OutlineInputBorder(),
-                          filled: true, //<-- SEE HERE
-                          fillColor: Color(0xFFF5F5F5),
+                          iconSize: 0.0,
+                          dropdownColor: Colors.white,
+                          value: selectBank,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              selectBank = newValue!;
+                            });
+                          },
+                          items: <String>[
+                            'Select Bank',
+                            'HDFC',
+                            'ICICI',
+                            'SBI',
+                            'Union Bank',
+                            'Axis Bank',
+                            'Bank of Baroda',
+                            'IDBI Bank',
+                            'Kotak Mahindra Bank'
+                          ].map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(
+                                value,
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            );
+                          }).toList(),
                         ),
                       ),
+
                       const SizedBox(height: 20),
                       const Divider(),
                       const SizedBox(height: 20),
@@ -321,7 +360,7 @@ class _AddAccountState extends State<AddAccount> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Approval(),
+                              builder: (context) => IncomeVerification(),
                             ));
                       },
                       child: const Text("Next"),

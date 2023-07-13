@@ -281,6 +281,11 @@ class _BasicInformationState extends State<BasicInformation> {
                       ? null
                       : () {
                           showModalBottomSheet<void>(
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(20),
+                              ),
+                            ),
                             context: context,
                             builder: (BuildContext context) {
                               return SizedBox(
