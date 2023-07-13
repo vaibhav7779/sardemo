@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sar/pages/add_bank.dart';
+// import 'package:sar/pages/add_bank.dart';
 
 import 'package:sar/pages/login.dart';
 
@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AddAccount(),
+      home: LoginPage(),
       theme: ThemeData(
         // AppBar theme
         // primarySwatch: buildMaterialColor(Color(0xFFF7B61A)),
@@ -62,6 +62,8 @@ class _MyAppState extends State<MyApp> {
 
         // text box outline color
         inputDecorationTheme: const InputDecorationTheme(
+          isDense: true,
+          contentPadding: EdgeInsets.fromLTRB(10, 18, 10, 18),
           filled: false,
           labelStyle: TextStyle(
             color: Color(0xFFBABABA),

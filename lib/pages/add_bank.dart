@@ -118,7 +118,7 @@ class _AddAccountState extends State<AddAccount> {
                             ),
                             filled: true,
                             fillColor: Colors.white,
-                            labelText: 'Income Type',
+                            labelText: 'Choose bank',
                             labelStyle: TextStyle(color: Colors.grey),
                             suffixIcon: Icon(
                               Icons.search,
