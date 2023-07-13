@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sar/pages/loanSummary.dart';
+import 'package:sar/pages/thirdparty2.dart';
 
 class ThirdParty extends StatefulWidget {
   const ThirdParty({super.key});
@@ -16,11 +17,21 @@ class _ThirdPartState extends State<ThirdParty> {
       child: Column(children: [
         Padding(
           padding: const EdgeInsets.all(1.0),
-          child: new Image.asset(
-            "assets/hd1.png",
-            fit: BoxFit.cover,
-            width: 500,
-            height: 810,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => third(),
+                ),
+              );
+            },
+            child: Image.asset(
+              "assets/hd1.png",
+              fit: BoxFit.cover,
+              width: 500,
+              height: 810,
+            ),
           ),
         ),
       ]),
