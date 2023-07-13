@@ -15,6 +15,8 @@ class AddBankAccount extends StatefulWidget {
 }
 
 class _AddBankAccountState extends State<AddBankAccount> {
+  String selectBank = 'Select Bank';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,20 +93,57 @@ class _AddBankAccountState extends State<AddBankAccount> {
                             fontSize: 14, fontWeight: FontWeight.w400),
                       ),
                       const SizedBox(height: 20),
-                      TextFormField(
-                        autofocus: false,
-                        decoration: const InputDecoration(
-                          suffix: Icon(
-                            Icons.search,
-                            color: Color.fromRGBO(233, 122, 42, 1),
+                      SizedBox(
+                        height: 50,
+                        child: DropdownButtonFormField(
+                          decoration: const InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.black, width: 1),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.black, width: 1),
+                            ),
+                            filled: true,
+                            fillColor: Colors.white,
+                            labelText: 'Income Type',
+                            labelStyle: TextStyle(color: Colors.grey),
+                            suffixIcon: Icon(
+                              Icons.search,
+                              color: Color.fromRGBO(233, 122, 42, 1),
+                            ),
                           ),
-                          labelText: "Choose Bank",
-                          hintText: "Select Bank",
-                          border: OutlineInputBorder(),
-                          filled: true, //<-- SEE HERE
-                          fillColor: Color(0xFFF5F5F5),
+                          iconSize: 0.0,
+                          dropdownColor: Colors.white,
+                          value: selectBank,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              selectBank = newValue!;
+                            });
+                          },
+                          items: <String>[
+                            'Select Bank',
+                            'HDFC',
+                            'ICICI',
+                            'SBI',
+                            'Union Bank',
+                            'Axis Bank',
+                            'Bank of Baroda',
+                            'IDBI Bank',
+                            'Kotak Mahindra Bank'
+                          ].map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(
+                                value,
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            );
+                          }).toList(),
                         ),
                       ),
+
                       const SizedBox(height: 20),
                       const Divider(),
                       const SizedBox(height: 20),
@@ -320,11 +359,18 @@ class _AddBankAccountState extends State<AddBankAccount> {
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
+<<<<<<< HEAD:lib/pages/add_bank.dart
                           context,
                           MaterialPageRoute(
                             builder: (context) => IncomeVerification(),
                           ),
                         );
+=======
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => IncomeVerification(),
+                            ));
+>>>>>>> a9ccd310075254d19fcdfe7ad7533fc73171fd5a:lib/pages/addAccount.dart
                       },
                       child: const Text("Next"),
                     ),

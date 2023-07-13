@@ -38,6 +38,11 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
 
+// radio button
+        radioTheme: RadioThemeData(
+          fillColor: MaterialStateColor.resolveWith((states) => Colors.red),
+        ), //
+
 // Text Button
         textButtonTheme: TextButtonThemeData(
           style: ElevatedButton.styleFrom(
@@ -86,3 +91,4 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
