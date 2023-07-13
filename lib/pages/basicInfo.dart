@@ -311,7 +311,7 @@ class _BasicInformationState extends State<BasicInformation> {
                                         ),
                                         TextFormField(
                                           autofocus: false,
-                                          initialValue: "123456",
+                                          // initialValue: "123456",
                                           decoration: const InputDecoration(
                                             suffix: Text(
                                               "Resend OTP",

@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
+import 'package:sar/pages/approval.dart';
+import 'package:sar/pages/loanSummary.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+
+import 'loan-disbursed.dart';
+
+bool isChecked = true;
 
 class IncomeVerification extends StatefulWidget {
   const IncomeVerification({super.key});
@@ -12,6 +18,9 @@ class IncomeVerification extends StatefulWidget {
 class _IncomeVerificationState extends State<IncomeVerification> {
   String? consent;
 
+  bool? check1 = false;
+  bool? check2 = false;
+  bool? check3 = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,20 +117,14 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                         ),
                       ),
                       const SizedBox(height: 16),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 66.0),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 60.0),
                         child: Align(
-                          alignment: AlignmentDirectional.topStart,
-                          child: TextButton(
-                            style: TextButton.styleFrom(
-                                fixedSize: const Size(100, 20),
-                                foregroundColor: Colors.white,
-                                backgroundColor: Color.fromRGBO(184, 28, 34, 1),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(24)),
-                                textStyle: const TextStyle(fontSize: 12)),
-                            onPressed: () {},
-                            child: const Text('Recommended'),
+                          alignment: Alignment.topLeft,
+                          child: Chip(
+                            backgroundColor: Color(0xFFB81C22),
+                            labelStyle: TextStyle(color: Colors.white),
+                            label: Text('Recommended'),
                           ),
                         ),
                       ),
@@ -231,7 +234,129 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                   child: Container(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showModalBottomSheet<void>(
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(20),
+                            ),
+                          ),
+                          context: context,
+                          builder: (BuildContext context) {
+                            return SizedBox(
+                              height: 330,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 1, horizontal: 10),
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: <Widget>[
+                                    const Text(
+                                      'LINK YOUR ACCOUNTS',
+                                      style: TextStyle(
+                                        fontSize: 10,
+                                        // fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    const Text(
+                                      'Select the account with your primary source of income',
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                    Column(
+                                      children: <Widget>[
+                                        ListTile(
+                                          leading:
+                                              Image.asset('assets/bob.png'),
+                                          title: const Text(
+                                            'Bank of Baroda',
+                                            style: TextStyle(fontSize: 14),
+                                          ),
+                                          subtitle: const Text(
+                                              'Savings ********1234 ',
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Color.fromRGBO(
+                                                      186, 186, 186, 1))),
+                                          trailing: Checkbox(
+                                            value: check1,
+                                            onChanged: (bool? value) {
+                                              setState(() {
+                                                check1 = value;
+                                              });
+                                            },
+                                          ),
+                                        ),
+                                        ListTile(
+                                          leading:
+                                              Image.asset('assets/icici.png'),
+                                          title: const Text(
+                                            'ICICI',
+                                            style: TextStyle(fontSize: 14),
+                                          ),
+                                          subtitle: const Text(
+                                              'Savings ********1234 ',
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Color.fromRGBO(
+                                                      186, 186, 186, 1))),
+                                          trailing: Checkbox(
+                                            value: check2,
+                                            onChanged: (bool? value) {
+                                              setState(() {
+                                                check2 = value;
+                                              });
+                                            },
+                                          ),
+                                        ),
+                                        ListTile(
+                                          leading:
+                                              Image.asset('assets/HDFC.png'),
+                                          title: const Text(
+                                            'HDFC',
+                                            style: TextStyle(fontSize: 14),
+                                          ),
+                                          subtitle: const Text(
+                                              'Savings ********1234 ',
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Color.fromRGBO(
+                                                      186, 186, 186, 1))),
+                                          trailing: Checkbox(
+                                            value: check3,
+                                            onChanged: (bool? value) {
+                                              setState(() {
+                                                check3 = value;
+                                              });
+                                            },
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: double.infinity,
+                                      child: ElevatedButton(
+                                        onPressed: () {
+                                          //LoanDisbursed
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Approval(),
+                                              ));
+                                        },
+                                        child: const Text("Link Account"),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
                       child: const Text("Next"),
                     ),
                   ),
