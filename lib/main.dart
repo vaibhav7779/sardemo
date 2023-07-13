@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:sar/pages/login.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -22,6 +21,8 @@ class _MyAppState extends State<MyApp> {
       home: LoginPage(),
       theme: ThemeData(
         // AppBar theme
+        // primarySwatch: buildMaterialColor(Color(0xFFF7B61A)),
+        primaryColor: Color(0xffF7B61A),
         appBarTheme: const AppBarTheme(
             backgroundColor: Color.fromRGBO(247, 182, 26, 1),
             centerTitle: false),
@@ -35,11 +36,6 @@ class _MyAppState extends State<MyApp> {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
           ),
         ),
-
-// radio button
-        radioTheme: RadioThemeData(
-          fillColor: MaterialStateColor.resolveWith((states) => Colors.red),
-        ), //
 
 // Text Button
         textButtonTheme: TextButtonThemeData(
@@ -77,7 +73,10 @@ class _MyAppState extends State<MyApp> {
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
         ),
-
+        radioTheme: RadioThemeData(
+          fillColor:
+              MaterialStateColor.resolveWith((states) => Color(0xFFE11F2A)),
+        ), //
 // cursor color
         textSelectionTheme: const TextSelectionThemeData(
           cursorColor: Colors.black,
@@ -86,4 +85,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import 'package:sar/pages/loanSummary.dart';
+import 'package:sar/pages/thirdparty.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 enum ProductType { Gold, Silver, Dimond, Blank }
@@ -323,7 +324,7 @@ class _ApprovalState extends State<Approval> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => LoanSummary(),
+                                builder: (context) => ThirdParty(),
                               ),
                             );
                           },
