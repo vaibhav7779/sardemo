@@ -7,14 +7,14 @@ import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 bool isChecked = false;
 
-class AddBankAccount extends StatefulWidget {
-  const AddBankAccount({super.key});
+class AddAccount extends StatefulWidget {
+  const AddAccount({super.key});
 
   @override
-  State<AddBankAccount> createState() => _AddBankAccountState();
+  State<AddAccount> createState() => _AddAccountState();
 }
 
-class _AddBankAccountState extends State<AddBankAccount> {
+class _AddAccountState extends State<AddAccount> {
   String selectBank = 'Select Bank';
 
   @override
@@ -359,18 +359,10 @@ class _AddBankAccountState extends State<AddBankAccount> {
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
-<<<<<<< HEAD:lib/pages/add_bank.dart
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => IncomeVerification(),
-                          ),
-                        );
-=======
                             context,
                             MaterialPageRoute(
                               builder: (context) => IncomeVerification(),
                             ));
->>>>>>> a9ccd310075254d19fcdfe7ad7533fc73171fd5a:lib/pages/addAccount.dart
                       },
                       child: const Text("Next"),
                     ),

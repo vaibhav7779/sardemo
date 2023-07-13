@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:sar/pages/login.dart';
-import 'package:sar/pages/palette.dart';
 
 void main() {
   runApp(MyApp());
@@ -37,11 +36,6 @@ class _MyAppState extends State<MyApp> {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
           ),
         ),
-
-// radio button
-        radioTheme: RadioThemeData(
-          fillColor: MaterialStateColor.resolveWith((states) => Colors.red),
-        ), //
 
 // Text Button
         textButtonTheme: TextButtonThemeData(
@@ -91,4 +85,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
