@@ -1,24 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sar/pages/addAccount.dart';
-import 'package:sar/pages/basicInfo.dart';
-// import 'package:sar/pages/login.dart';
-// import 'package:sar/pages/basicInfo.dart';
-//import 'package:sar/pages/loanSummary.dart';
+
 import 'package:sar/pages/login.dart';
-import 'package:sar/pages/welcome.dart';
-import 'package:sar/pages/loan-disbursed.dart';
-// import 'package:sar/pages/loan-disbursed.dart';
-// import 'package:sar/pages/document-sign.dart';
-// import 'package:sar/pages/login.dart';
-// import 'package:sar/pages/basicInfo.dart';
-// import 'package:sar/pages/loanSummary.dart';
-import 'package:sar/pages/login.dart';
-// import 'package:sar/palette.dart';
-// import 'package:sar/pages/addressConfirm.dart';
-// import 'package:sar/pages/login.dart';
-// import 'package:sar/pages/otp.dart';
-// import 'package:sar/pages/otp.dart';
-// import 'package:sar/utils/routes.dart';
+
 
 void main() {
   runApp(MyApp());
