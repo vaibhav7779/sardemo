@@ -39,7 +39,22 @@ class _LoanSummaryState extends State<LoanSummary> {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [Text("Loan Summary"), Text("9/11")],
+                children: const [
+                  Text(
+                    "Loan Summary",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  Text(
+                    "9/11",
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  )
+                ],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
@@ -108,16 +123,36 @@ class _LoanSummaryState extends State<LoanSummary> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
-                          Text("Amount to be credited"),
-                          Text("₹1,85,700"),
+                          Text(
+                            "Amount to be credited",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Text(
+                            "₹1,85,700",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 16),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
-                          Text("Total loan amount"),
-                          Text("₹2,00,000"),
+                          Text(
+                            "Total loan amount",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            "₹2,00,000",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 16),
@@ -126,16 +161,36 @@ class _LoanSummaryState extends State<LoanSummary> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
-                          Text("Processing fee (6% +GST)"),
-                          Text("-₹14,100"),
+                          Text(
+                            "Processing fee (6% +GST)",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            "-₹14,100",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 16),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
-                          Text("Stamp duty charges"),
-                          Text("-₹200"),
+                          Text(
+                            "Stamp duty charges",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            "-₹200",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
                         ],
                       ),
                     ],
@@ -156,16 +211,36 @@ class _LoanSummaryState extends State<LoanSummary> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
-                          Text("Amount you repay"),
-                          Text("₹2,96,600"),
+                          Text(
+                            "Amount you repay",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            "₹2,96,600",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 16),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
-                          Text("Total loan amount"),
-                          Text("₹2,00,000"),
+                          Text(
+                            "Total loan amount",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            "₹2,00,000",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 16),
@@ -174,8 +249,18 @@ class _LoanSummaryState extends State<LoanSummary> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
-                          Text("Interest @ 20.88% p.a.*"),
-                          Text("+₹96,600"),
+                          Text(
+                            "Interest @ 20.88% p.a.*",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            "+₹96,600",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 16),
@@ -197,28 +282,63 @@ class _LoanSummaryState extends State<LoanSummary> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
-                          Text("Monthly EMI"),
-                          Text("₹6200"),
+                          Text(
+                            "Monthly EMI",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            "₹6200",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 16),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
-                          Text("Tenure"),
-                          Text("48 months"),
+                          Text(
+                            "Tenure",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            "48 months",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 16),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text("Loan credited to"),
+                          const Text(
+                            "Loan credited to",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: const [
-                              Text("HDFC"),
-                              Text("XXXX1234"),
+                              Text(
+                                "HDFC",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.black),
+                              ),
+                              Text(
+                                "XXXX1234",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black),
+                              ),
                             ],
                           ),
                         ],
@@ -227,8 +347,18 @@ class _LoanSummaryState extends State<LoanSummary> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
-                          Text("EMI Payments to be debited from"),
-                          Text("HDFC"),
+                          Text(
+                            "EMI Payments to bedebited from",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            "HDFC",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
                         ],
                       ),
                     ],
@@ -249,16 +379,36 @@ class _LoanSummaryState extends State<LoanSummary> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
-                          Text("Annualised interest rate"),
-                          Text("20.8%"),
+                          Text(
+                            "Annualised interest rate",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            "20.8%",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 16),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
-                          Text("First EMI date"),
-                          Text("23rd June 2023"),
+                          Text(
+                            "First EMI date",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            "23rd June 2023",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black),
+                          ),
                         ],
                       ),
                     ],
