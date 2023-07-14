@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sar/pages/employment.dart';
 import 'package:sar/pages/homePage.dart';
+import 'package:sar/pages/income_verification.dart';
 
 import 'package:sar/pages/login.dart';
 
@@ -20,7 +21,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: LoginPage(),
+      // home: IncomeVerification(),
       home: HomePage(),
       theme: ThemeData(
         // AppBar theme

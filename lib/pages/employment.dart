@@ -15,7 +15,8 @@ class Employment extends StatefulWidget {
 class _EmploymentState extends State<Employment> {
   String dropdownIncome = 'Salaried';
   String dropdownComp = 'Other';
-
+  bool? check1 = false;
+  bool? check2 = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,33 +38,33 @@ class _EmploymentState extends State<Employment> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BreadCrumb(
-                items: <BreadCrumbItem>[
-                  BreadCrumbItem(
-                    content: const Text(
-                      "HOME",
-                      style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                  BreadCrumbItem(
-                    content: const Text(
-                      "PERSONAL LOANS",
-                      style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                  BreadCrumbItem(
-                    content: const Text(
-                      "APPLY",
-                      style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ],
-                divider: const Icon(Icons.chevron_right),
-              ),
-              const SizedBox(height: 20),
+              // BreadCrumb(
+              //   items: <BreadCrumbItem>[
+              //     BreadCrumbItem(
+              //       content: const Text(
+              //         "HOME",
+              //         style:
+              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+              //     BreadCrumbItem(
+              //       content: const Text(
+              //         "PERSONAL LOANS",
+              //         style:
+              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+              //     BreadCrumbItem(
+              //       content: const Text(
+              //         "APPLY",
+              //         style:
+              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+              //   ],
+              //   divider: const Icon(Icons.chevron_right),
+              // ),
+              // const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [Text("Employment Details"), Text("3/11")],
@@ -212,11 +213,102 @@ class _EmploymentState extends State<Employment> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => AddAccount(),
+                    showModalBottomSheet<void>(
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(
+                          top: Radius.circular(20),
+                        ),
                       ),
+                      context: context,
+                      builder: (BuildContext context) {
+                        return SizedBox(
+                          height: 270,
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  const Text(
+                                    'VERIFY YOUR DETAILS',
+                                    style: TextStyle(fontSize: 10),
+                                  ),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  const Text(
+                                      'Enter OTP sent via mail to: amit.k@placebo.in'),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  TextFormField(
+                                    autofocus: false,
+                                    // initialValue: "123456",
+                                    decoration: const InputDecoration(
+                                      suffix: Text(
+                                        "Resend OTP",
+                                        style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(233, 122, 42, 1),
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      labelText: "Enter OTP",
+
+                                      labelStyle: TextStyle(color: Colors.grey),
+
+                                      border: OutlineInputBorder(),
+                                      filled: true, //<-- SEE HERE
+                                      fillColor: Colors.white,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  Center(
+                                    child: Align(
+                                      alignment: Alignment.bottomCenter,
+                                      child: Container(
+                                        width: double.infinity,
+                                        child: ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    AddAccount(),
+                                              ),
+                                            );
+                                          },
+                                          child: const Text("Next"),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  TextButton(
+                                      onPressed:
+                                          (check1 == false && check1 == false)
+                                              ? null
+                                              : () {},
+                                      child: const Text(
+                                        "or verify via link",
+                                        style: TextStyle(
+                                            color:
+                                                Color.fromRGBO(233, 122, 42, 1),
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ))
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
                     );
                   },
                   child: const Text("Next"),
