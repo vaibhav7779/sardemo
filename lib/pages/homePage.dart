@@ -106,12 +106,15 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 12.0,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
                     child: Card(
-                      elevation: 4,
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
                       child: Column(
                         children: [
                           Padding(
@@ -142,7 +145,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(
                     child: Card(
-                      elevation: 4,
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
                       child: Column(
                         children: [
                           Padding(
@@ -167,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              const SizedBox(
+              SizedBox(
                 height: 14,
               ),
               Row(
@@ -175,7 +181,10 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   SizedBox(
                     child: Card(
-                      elevation: 4,
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
                       clipBehavior: Clip.hardEdge,
                       child: InkWell(
                         splashColor: Colors.amber,
@@ -209,9 +218,12 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(
                     width: 12,
                   ),
-                  const SizedBox(
+                  SizedBox(
                     child: Card(
-                      elevation: 4,
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
                       child: Column(
                         children: [
                           Padding(
