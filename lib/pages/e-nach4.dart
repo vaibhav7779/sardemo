@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:sar/pages/loanSummary.dart';
+import 'package:sar/pages/loading.dart';
+// import 'package:sar/pages/loanSummary.dart';
 
-import 'document-sign.dart';
+// import 'approval.dart';
 
-class third extends StatefulWidget {
-  const third({super.key});
+class Fourenach extends StatefulWidget {
+  const Fourenach({super.key});
 
   @override
-  State<third> createState() => _thirdState();
+  State<Fourenach> createState() => _ThirdPartState();
 }
 
-class _thirdState extends State<third> {
+class _ThirdPartState extends State<Fourenach> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,15 +24,15 @@ class _thirdState extends State<third> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DocumentSign(),
+                  builder: (context) => Loading(nextPage: 'approval'),
                 ),
               );
             },
-            child: new Image.asset(
-              "assets/hdfcpage.png",
-              fit: BoxFit.scaleDown,
-              width: 500,
-              height: 1100,
+            child: Image.asset(
+              "assets/bankk.png",
+              fit: BoxFit.cover,
+              width: 480,
+              height: 1110,
             ),
           ),
         ),

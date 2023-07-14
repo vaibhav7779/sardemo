@@ -36,7 +36,6 @@ class _ApprovalState extends State<Approval> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               // BreadCrumb(
               //   items: <BreadCrumbItem>[
               //     BreadCrumbItem(
@@ -326,7 +325,7 @@ class _ApprovalState extends State<Approval> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ThirdParty(),
+                                builder: (context) => LoanSummary(),
                               ),
                             );
                           },
