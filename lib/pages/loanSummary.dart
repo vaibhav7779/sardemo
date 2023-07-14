@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import 'package:sar/pages/document-sign.dart';
+import 'package:sar/pages/thirdparty.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 bool isChecked = false;
@@ -376,7 +377,7 @@ class _LoanSummaryState extends State<LoanSummary> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
                           Text(
@@ -394,9 +395,9 @@ class _LoanSummaryState extends State<LoanSummary> {
                         ],
                       ),
                       const SizedBox(height: 16),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
+                        children: [
                           Text(
                             "First EMI date",
                             style: TextStyle(
@@ -423,7 +424,7 @@ class _LoanSummaryState extends State<LoanSummary> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DocumentSign(),
+                          builder: (context) => ThirdParty(),
                         ));
                   },
                   child: const Text("Get loan"),

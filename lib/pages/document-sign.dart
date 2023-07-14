@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter/rendering.dart';
 import 'package:sar/pages/loading.dart';
-import 'package:sar/pages/loan-disbursed.dart';
 
 class DocumentSign extends StatefulWidget {
   const DocumentSign({super.key});
@@ -51,7 +51,7 @@ class _DocumentSignState extends State<DocumentSign> {
                   child: ElevatedButton(
                     onPressed: () {
                       showModalBottomSheet<void>(
-                        shape: const RoundedRectangleBorder(
+                        shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.vertical(
                             top: Radius.circular(20),
                           ),
@@ -74,7 +74,7 @@ class _DocumentSignState extends State<DocumentSign> {
                                       fontWeight: FontWeight.w700,
                                     ),
                                   ),
-                                  const Text(
+                                  Text(
                                     'Provide us with the following in order to setup your folio',
                                     style: TextStyle(
                                       fontSize: 14,

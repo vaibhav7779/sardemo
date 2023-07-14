@@ -4,6 +4,7 @@ import 'package:sar/pages/approval.dart';
 import 'package:sar/pages/loanSummary.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
+import 'e-nach.dart';
 import 'loan-disbursed.dart';
 
 bool isChecked = true;
@@ -233,7 +234,7 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Approval(),
+                          builder: (context) => Enach(),
                         ));
                   },
                   child: Text("Explore more options"),
@@ -262,7 +263,7 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Approval(),
+                              builder: (context) => Enach(),
                             ));
 
                         // showModalBottomSheet<void>(
