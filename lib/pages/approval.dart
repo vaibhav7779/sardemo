@@ -36,32 +36,34 @@ class _ApprovalState extends State<Approval> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BreadCrumb(
-                items: <BreadCrumbItem>[
-                  BreadCrumbItem(
-                    content: const Text(
-                      "HOME",
-                      style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                  BreadCrumbItem(
-                    content: const Text(
-                      "PERSONAL LOANS",
-                      style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                  BreadCrumbItem(
-                    content: const Text(
-                      "APPLY",
-                      style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ],
-                divider: const Icon(Icons.chevron_right),
-              ),
+
+              // BreadCrumb(
+              //   items: <BreadCrumbItem>[
+              //     BreadCrumbItem(
+              //       content: const Text(
+              //         "HOME",
+              //         style:
+              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+              //     BreadCrumbItem(
+              //       content: const Text(
+              //         "PERSONAL LOANS",
+              //         style:
+              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+              //     BreadCrumbItem(
+              //       content: const Text(
+              //         "APPLY",
+              //         style:
+              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+
+              //   ],
+              //   divider: const Icon(Icons.chevron_right),
+              // ),
               const SizedBox(height: 24),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -200,7 +202,7 @@ class _ApprovalState extends State<Approval> {
                                     MainAxisAlignment.spaceBetween,
                                 children: const [
                                   Text(
-                                    '₹6,200',
+                                    '₹5100',
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
@@ -242,7 +244,7 @@ class _ApprovalState extends State<Approval> {
                                     MainAxisAlignment.spaceBetween,
                                 children: const [
                                   Text(
-                                    '₹7,700',
+                                    '₹6500',
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
@@ -282,7 +284,7 @@ class _ApprovalState extends State<Approval> {
                                     MainAxisAlignment.spaceBetween,
                                 children: const [
                                   Text(
-                                    '₹10,100',
+                                    '₹12000',
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
@@ -328,7 +330,7 @@ class _ApprovalState extends State<Approval> {
                               ),
                             );
                           },
-                    child: const Text("Confirm loan details"),
+                    child: const Text("Review loan details"),
                   ),
                 ),
               ),

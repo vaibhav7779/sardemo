@@ -39,36 +39,36 @@ class _OTPValidationState extends State<OTPValidation> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BreadCrumb(
-                items: <BreadCrumbItem>[
-                  BreadCrumbItem(
-                    content: const Text(
-                      "HOME",
-                      style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                  BreadCrumbItem(
-                    content: const Text(
-                      "PERSONAL LOANS",
-                      style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                  BreadCrumbItem(
-                    content: const Text(
-                      "APPLY",
-                      style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ],
-                divider: const Icon(Icons.chevron_right),
-              ),
+              // BreadCrumb(
+              //   items: <BreadCrumbItem>[
+              //     BreadCrumbItem(
+              //       content: const Text(
+              //         "HOME",
+              //         style:
+              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+              //     BreadCrumbItem(
+              //       content: const Text(
+              //         "PERSONAL LOANS",
+              //         style:
+              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+              //     BreadCrumbItem(
+              //       content: const Text(
+              //         "APPLY",
+              //         style:
+              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+              //   ],
+              //   divider: const Icon(Icons.chevron_right),
+              // ),
               const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [Text("Name and Email"), Text("1/11")],
+                children: const [Text("Verify Your Details"), Text("1/11")],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
@@ -76,15 +76,15 @@ class _OTPValidationState extends State<OTPValidation> {
                 currentStep: 1,
                 selectedColor: Color(0xFF45C00B),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 34),
               const Text(
-                "Verify your personal details",
+                "Verify your mobile",
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 16),
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),
