@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sar/pages/employment.dart';
-import 'package:sar/pages/homePage.dart';
-import 'package:sar/pages/income_verification.dart';
+import 'package:sar/pages/loading.dart';
 
-import 'package:sar/pages/login.dart';
+// import 'package:sar/pages/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +20,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: IncomeVerification(),
-      home: HomePage(),
+      home: Loading(nextPage: 'asd'),
       theme: ThemeData(
         // AppBar theme
         // primarySwatch: buildMaterialColor(Color(0xFFF7B61A)),
