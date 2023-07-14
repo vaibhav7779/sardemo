@@ -26,11 +26,14 @@ class _ThirdPartState extends State<ThirdParty> {
                 ),
               );
             },
-            child: Image.asset(
-              "assets/hd1.png",
-              fit: BoxFit.cover,
-              width: 500,
-              height: 810,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Image.asset(
+                "assets/hd1.png",
+                fit: BoxFit.cover,
+                width: 400,
+                height: 740,
+              ),
             ),
           ),
         ),

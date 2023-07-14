@@ -59,6 +59,18 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
 
+// textformfield
+        textButtonTheme: TextButtonThemeData(
+          style: ElevatedButton.styleFrom(
+              foregroundColor: Color.fromRGBO(255, 31, 41, 1)),
+        ),
+
+// Text Button
+        // textButtonTheme: TextButtonThemeData(
+        //   style: ElevatedButton.styleFrom(
+        //       foregroundColor: Color.fromRGBO(255, 31, 41, 1)),
+        // ),
+
 // checkbox theme
         unselectedWidgetColor: const Color.fromRGBO(225, 31, 42, 1),
         checkboxTheme: CheckboxThemeData(
