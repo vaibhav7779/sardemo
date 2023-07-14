@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sar/pages/addressConfirm.dart';
 import 'package:sar/pages/basicInfo.dart';
+import 'package:sar/pages/e-nach.dart';
 import 'package:sar/pages/employment.dart';
+import 'package:sar/pages/homePage.dart';
+import 'package:sar/pages/income_verification.dart';
 import 'package:sar/pages/loan-disbursed.dart';
 // import 'package:sar/pages/loan-disbursed.dart';
 // import 'package:sar/pages/document-sign.dart';
@@ -36,7 +39,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: third(),
+      home: HomePage(),
       theme: ThemeData(
         // AppBar theme
         // primarySwatch: buildMaterialColor(Color(0xFFF7B61A)),

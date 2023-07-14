@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
+import 'package:sar/pages/add_bank.dart';
+import 'package:sar/pages/employment.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 bool isChecked = false;
@@ -275,87 +277,16 @@ class _BasicInformationState extends State<BasicInformation> {
               Container(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    showModalBottomSheet<void>(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return SizedBox(
-                          height: 270,
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  const Text(
-                                    'VERIFY YOUR DETAILS',
-                                    style: TextStyle(fontSize: 10),
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  const Text(
-                                      'Enter OTP sent via mail to: amit.k@placebo.in'),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  TextFormField(
-                                    autofocus: false,
-                                    initialValue: "123456",
-                                    decoration: const InputDecoration(
-                                      suffix: Text(
-                                        "Resend OTP",
-                                        style: TextStyle(
-                                          color:
-                                              Color.fromRGBO(233, 122, 42, 1),
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      labelText: "Enter OTP",
-
-                                      labelStyle: TextStyle(color: Colors.grey),
-
-                                      border: OutlineInputBorder(),
-                                      filled: true, //<-- SEE HERE
-                                      fillColor: Colors.white,
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  Center(
-                                    child: Align(
-                                      alignment: Alignment.bottomCenter,
-                                      child: Container(
-                                        width: double.infinity,
-                                        child: ElevatedButton(
-                                          onPressed: () {},
-                                          child: const Text("Next"),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  TextButton(
-                                      onPressed: () {},
-                                      child: const Text(
-                                        "or verify via link",
-                                        style: TextStyle(
-                                            color:
-                                                Color.fromRGBO(233, 122, 42, 1),
-                                            fontSize: 13,
-                                            fontWeight: FontWeight.bold),
-                                      ))
-                                ],
-                              ),
-                            ),
-                          ),
-                        );
-                      },
+                  onPressed:
+                      // check1 == false || check2 == false
+                      //     ? null
+                      //     :
+                      () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Employment(),
+                      ),
                     );
                   },
                   child: const Text("Next"),
