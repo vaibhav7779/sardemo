@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sar/pages/loanSummary.dart';
+import 'package:sar/pages/loading.dart';
+// import 'package:sar/pages/loanSummary.dart';
 
-import 'approval.dart';
+// import 'approval.dart';
 
 class Fourenach extends StatefulWidget {
   const Fourenach({super.key});
@@ -23,7 +24,7 @@ class _ThirdPartState extends State<Fourenach> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Approval(),
+                  builder: (context) => Loading(nextPage: 'approval'),
                 ),
               );
             },
