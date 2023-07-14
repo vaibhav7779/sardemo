@@ -107,24 +107,30 @@ class _HomePageState extends State<HomePage> {
                 height: 12.0,
               ),
               const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
-                    height: 74,
-                    width: 126,
                     child: Card(
                       elevation: 4,
                       child: Column(
                         children: [
                           Padding(
-                            padding: EdgeInsets.only(top: 10.0),
-                            child: Icon(Icons.account_balance_wallet_outlined),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 8.0),
-                            child: Text(
-                              "Current A/C",
-                              style: TextStyle(fontSize: 12),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 45, vertical: 14),
+                            child: Column(
+                              children: [
+                                Icon(
+                                  Icons.account_balance_wallet_outlined,
+                                  size: 30,
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  "Current A/C",
+                                  style: TextStyle(fontSize: 12),
+                                )
+                              ],
                             ),
                           ),
                         ],
@@ -135,21 +141,24 @@ class _HomePageState extends State<HomePage> {
                     width: 12,
                   ),
                   SizedBox(
-                    height: 74,
-                    width: 126,
                     child: Card(
                       elevation: 4,
                       child: Column(
                         children: [
                           Padding(
-                            padding: EdgeInsets.only(top: 10.0),
-                            child: Icon(Icons.savings_outlined),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 8.0),
-                            child: Text(
-                              "Savings A/C",
-                              style: TextStyle(fontSize: 12),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 45, vertical: 14),
+                            child: Column(
+                              children: [
+                                Icon(Icons.savings_outlined, size: 30),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  "Savings A/C",
+                                  style: TextStyle(fontSize: 12),
+                                )
+                              ],
                             ),
                           ),
                         ],
@@ -165,8 +174,6 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   SizedBox(
-                    height: 74,
-                    width: 126,
                     child: Card(
                       elevation: 4,
                       clipBehavior: Clip.hardEdge,
@@ -179,14 +186,19 @@ class _HomePageState extends State<HomePage> {
                         child: const Column(
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(top: 10.0),
-                              child: Icon(Icons.currency_rupee_outlined),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(top: 8.0),
-                              child: Text(
-                                "Personal Loan",
-                                style: TextStyle(fontSize: 12),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 40, vertical: 14),
+                              child: Column(
+                                children: [
+                                  Icon(Icons.currency_rupee_outlined, size: 30),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    "Personal Loan",
+                                    style: TextStyle(fontSize: 12),
+                                  )
+                                ],
                               ),
                             ),
                           ],
@@ -198,21 +210,24 @@ class _HomePageState extends State<HomePage> {
                     width: 12,
                   ),
                   const SizedBox(
-                    height: 74,
-                    width: 126,
                     child: Card(
                       elevation: 4,
                       child: Column(
                         children: [
                           Padding(
-                            padding: EdgeInsets.only(top: 10.0),
-                            child: Icon(Icons.house_outlined),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 8.0),
-                            child: Text(
-                              "Home Loan",
-                              style: TextStyle(fontSize: 12),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 48, vertical: 14),
+                            child: Column(
+                              children: [
+                                Icon(Icons.house_outlined, size: 30),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  "Home Loan",
+                                  style: TextStyle(fontSize: 12),
+                                )
+                              ],
                             ),
                           ),
                         ],
