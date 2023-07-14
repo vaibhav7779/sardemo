@@ -37,7 +37,9 @@ class _LoanDisbursedState extends State<LoanDisbursed> {
                   padding: const EdgeInsets.all(20),
                   child: Column(
                     children: [
-                      const SizedBox(height: 240),
+                      SizedBox(
+                        child: Image.asset('assets/success.gif'),
+                      ),
                       const Text(
                         'Congratulations',
                         style: TextStyle(

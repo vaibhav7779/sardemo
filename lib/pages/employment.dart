@@ -14,7 +14,8 @@ class Employment extends StatefulWidget {
 class _EmploymentState extends State<Employment> {
   String dropdownIncome = 'Salaried';
   String dropdownComp = 'Other';
-
+  bool? check1 = false;
+  bool? check2 = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,33 +37,33 @@ class _EmploymentState extends State<Employment> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BreadCrumb(
-                items: <BreadCrumbItem>[
-                  BreadCrumbItem(
-                    content: const Text(
-                      "HOME",
-                      style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                  BreadCrumbItem(
-                    content: const Text(
-                      "PERSONAL LOANS",
-                      style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                  BreadCrumbItem(
-                    content: const Text(
-                      "APPLY",
-                      style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ],
-                divider: const Icon(Icons.chevron_right),
-              ),
-              const SizedBox(height: 20),
+              // BreadCrumb(
+              //   items: <BreadCrumbItem>[
+              //     BreadCrumbItem(
+              //       content: const Text(
+              //         "HOME",
+              //         style:
+              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+              //     BreadCrumbItem(
+              //       content: const Text(
+              //         "PERSONAL LOANS",
+              //         style:
+              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+              //     BreadCrumbItem(
+              //       content: const Text(
+              //         "APPLY",
+              //         style:
+              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+              //   ],
+              //   divider: const Icon(Icons.chevron_right),
+              // ),
+              // const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [Text("Employment Details"), Text("3/11")],

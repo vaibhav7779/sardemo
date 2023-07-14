@@ -39,6 +39,8 @@ class _MyAppState extends State<MyApp> {
       home: third(),
       theme: ThemeData(
         // AppBar theme
+        // primarySwatch: buildMaterialColor(Color(0xFFF7B61A)),
+        primaryColor: Color(0xffF7B61A),
         appBarTheme: const AppBarTheme(
             backgroundColor: Color.fromRGBO(247, 182, 26, 1),
             centerTitle: false),
@@ -72,6 +74,8 @@ class _MyAppState extends State<MyApp> {
 
         // text box outline color
         inputDecorationTheme: const InputDecorationTheme(
+          isDense: true,
+          contentPadding: EdgeInsets.fromLTRB(10, 18, 10, 18),
           filled: false,
           labelStyle: TextStyle(
             color: Color(0xFFBABABA),
@@ -84,7 +88,10 @@ class _MyAppState extends State<MyApp> {
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
         ),
-
+        radioTheme: RadioThemeData(
+          fillColor:
+              MaterialStateColor.resolveWith((states) => Color(0xFFE11F2A)),
+        ), //
 // cursor color
         textSelectionTheme: const TextSelectionThemeData(
           cursorColor: Colors.black,

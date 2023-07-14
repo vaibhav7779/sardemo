@@ -16,11 +16,21 @@ class _thirdState extends State<third> {
       child: Column(children: [
         Padding(
           padding: const EdgeInsets.all(1.0),
-          child: new Image.asset(
-            "assets/hdfcpage.png",
-            fit: BoxFit.scaleDown,
-            width: 500,
-            height: 1100,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LoanSummary(),
+                ),
+              );
+            },
+            child: new Image.asset(
+              "assets/hdfcpage.png",
+              fit: BoxFit.scaleDown,
+              width: 500,
+              height: 1100,
+            ),
           ),
         ),
       ]),
