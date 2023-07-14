@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:sar/pages/loanSummary.dart';
+import 'e-nach4.dart';
 
-import 'document-sign.dart';
-
-class third extends StatefulWidget {
-  const third({super.key});
+class Enach extends StatefulWidget {
+  const Enach({super.key});
 
   @override
-  State<third> createState() => _thirdState();
+  State<Enach> createState() => _ThirdPartState();
 }
 
-class _thirdState extends State<third> {
+class _ThirdPartState extends State<Enach> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,15 +22,15 @@ class _thirdState extends State<third> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DocumentSign(),
+                  builder: (context) => Fourenach(),
                 ),
               );
             },
-            child: new Image.asset(
-              "assets/hdfcpage.png",
-              fit: BoxFit.scaleDown,
-              width: 500,
-              height: 1100,
+            child: Image.asset(
+              "assets/bank.png",
+              fit: BoxFit.cover,
+              width: 480,
+              height: 810,
             ),
           ),
         ),
