@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sar/pages/loading.dart';
 import 'package:sar/pages/loan-disbursed.dart';
 
 class DocumentSign extends StatefulWidget {
@@ -110,7 +111,9 @@ class _DocumentSignState extends State<DocumentSign> {
                                                   context,
                                                   MaterialPageRoute(
                                                     builder: (context) =>
-                                                        LoanDisbursed(),
+                                                        const Loading(
+                                                      nextPage: 'succss',
+                                                    ),
                                                   ));
                                             },
                                       child: const Text(

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:sar/pages/approval.dart';
+import 'package:sar/pages/loan-disbursed.dart';
 
 class Loading extends StatefulWidget {
   final String nextPage;
@@ -18,7 +19,8 @@ class _LoadingState extends State<Loading> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => Approval(),
+          builder: (context) =>
+              widget.nextPage == 'approval' ? Approval() : LoanDisbursed(),
         ),
       );
     });

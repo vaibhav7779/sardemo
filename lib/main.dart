@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sar/pages/loading.dart';
+import 'package:sar/pages/homePage.dart';
+// import 'package:sar/pages/loading.dart';
 
 // import 'package:sar/pages/login.dart';
 
@@ -20,7 +21,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: IncomeVerification(),
-      home: Loading(nextPage: 'asd'),
+      home: HomePage(),
       theme: ThemeData(
         // AppBar theme
         // primarySwatch: buildMaterialColor(Color(0xFFF7B61A)),
