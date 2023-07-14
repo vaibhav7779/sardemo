@@ -41,6 +41,7 @@ dependencies:
   dropdown_textfield: ^1.0.8
   dropdown_search: ^5.0.6
   flex_seed_scheme: ^1.4.0
+  breadcrumbs: ^0.1.0
 
 dev_dependencies:
   flutter_test:
