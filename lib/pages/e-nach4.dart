@@ -28,11 +28,14 @@ class _ThirdPartState extends State<Fourenach> {
                 ),
               );
             },
-            child: Image.asset(
-              "assets/bankk.png",
-              fit: BoxFit.cover,
-              width: 480,
-              height: 1110,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Image.asset(
+                "assets/bankk.png",
+                fit: BoxFit.cover,
+                width: 400,
+                height: 740,
+              ),
             ),
           ),
         ),

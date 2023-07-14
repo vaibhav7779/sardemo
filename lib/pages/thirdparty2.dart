@@ -27,11 +27,14 @@ class _thirdState extends State<third> {
                 ),
               );
             },
-            child: new Image.asset(
-              "assets/hdfcpage.png",
-              fit: BoxFit.scaleDown,
-              width: 500,
-              height: 1100,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: new Image.asset(
+                "assets/hdfcpage.png",
+                fit: BoxFit.scaleDown,
+                width: 600,
+                height: 730,
+              ),
             ),
           ),
         ),

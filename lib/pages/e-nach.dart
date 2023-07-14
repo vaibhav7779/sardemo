@@ -26,11 +26,14 @@ class _ThirdPartState extends State<Enach> {
                 ),
               );
             },
-            child: Image.asset(
-              "assets/bank.png",
-              fit: BoxFit.cover,
-              width: 480,
-              height: 810,
+            child: Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Image.asset(
+                "assets/bank.png",
+                fit: BoxFit.cover,
+                width: 400,
+                height: 710,
+              ),
             ),
           ),
         ),
