@@ -16,9 +16,8 @@ class Approval extends StatefulWidget {
 }
 
 class _ApprovalState extends State<Approval> {
-  int amount = globals.amount;
+  int amount = (globals.amount > 0) ? globals.amount : 200000;
   ProductType? _productType;
-  int age = 200000;
 
   var format = intl.NumberFormat.currency(
     locale: 'en_IN',
@@ -84,9 +83,9 @@ class _ApprovalState extends State<Approval> {
               //   divider: const Icon(Icons.chevron_right),
               // ),
               const SizedBox(height: 24),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [Text("Loan Offer"), Text("7/11")],
+                children: [Text("Loan Offer"), Text("7/11")],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
@@ -134,12 +133,11 @@ class _ApprovalState extends State<Approval> {
                   ),
                   Slider(
                     label: "Select Age",
-                    value: age.toDouble(),
+                    value: amount.toDouble(),
                     activeColor: Color(0xffF7B61A),
                     onChanged: (value) {
                       setState(() {
-                        age = value.toInt();
-                        amount = age;
+                        amount = value.toInt();
                       });
                     },
                     min: 50000,
