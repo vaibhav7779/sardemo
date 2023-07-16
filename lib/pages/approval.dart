@@ -16,7 +16,7 @@ class Approval extends StatefulWidget {
 }
 
 class _ApprovalState extends State<Approval> {
-  int amount = (globals.amount > 0) ? globals.amount : 200000;
+  int amount = globals.amount;
   ProductType? _productType;
 
   var format = intl.NumberFormat.currency(
@@ -178,7 +178,7 @@ class _ApprovalState extends State<Approval> {
                               colors: [Color(0xffF7B61A), Color(0xffE97A2A)],
                             ).createShader(bounds),
                             child: Text(
-                              format.format(amount),
+                              format.format((amount > 0) ? amount : 200000),
                               style: TextStyle(
                                 fontSize: 34.0,
                                 color: Colors.white,
