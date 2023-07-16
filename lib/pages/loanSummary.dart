@@ -3,6 +3,8 @@ import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import 'package:sar/pages/document-sign.dart';
 import 'package:sar/pages/thirdparty.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+import 'package:intl/intl.dart' as intl;
+import 'package:sar/global.dart' as globals;
 
 bool isChecked = false;
 
@@ -17,6 +19,11 @@ bool detailsRadio = false;
 bool temrsRadio = false;
 
 class _LoanSummaryState extends State<LoanSummary> {
+  var format = intl.NumberFormat.currency(
+    locale: 'en_IN',
+    decimalDigits: 0, // change it to get decimal places
+    symbol: '₹ ',
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,9 +102,9 @@ class _LoanSummaryState extends State<LoanSummary> {
                             shaderCallback: (bounds) => const LinearGradient(
                               colors: [Color(0xffF7B61A), Color(0xffE97A2A)],
                             ).createShader(bounds),
-                            child: const Text(
-                              '₹2,00,000',
-                              style: TextStyle(
+                            child: Text(
+                              format.format(globals.amount),
+                              style: const TextStyle(
                                 fontSize: 34.0,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,

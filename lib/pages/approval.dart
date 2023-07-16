@@ -3,6 +3,8 @@ import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import 'package:sar/pages/loanSummary.dart';
 import 'package:sar/pages/thirdparty.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+import 'package:sar/global.dart' as globals;
+import 'package:intl/intl.dart' as intl;
 
 enum ProductType { Gold, Silver, Dimond, Blank }
 
@@ -14,7 +16,25 @@ class Approval extends StatefulWidget {
 }
 
 class _ApprovalState extends State<Approval> {
+  int amount = globals.amount;
   ProductType? _productType;
+  int age = 200000;
+
+  var format = intl.NumberFormat.currency(
+    locale: 'en_IN',
+    decimalDigits: 0, // change it to get decimal places
+    symbol: '₹ ',
+  );
+  String _handleCalculation(amount, months) {
+    double rate = 9.5;
+    double interest = (amount * (rate * 0.01)) / months;
+    double total = ((amount / months) + interest).toInt();
+
+    String ret = format.format(total);
+    // String val = "₹$ret";
+    return ret;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,6 +132,19 @@ class _ApprovalState extends State<Approval> {
                     "you want to apply for",
                     style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                   ),
+                  Slider(
+                    label: "Select Age",
+                    value: age.toDouble(),
+                    activeColor: Color(0xffF7B61A),
+                    onChanged: (value) {
+                      setState(() {
+                        age = value.toInt();
+                        amount = age;
+                      });
+                    },
+                    min: 50000,
+                    max: 900000,
+                  ),
                 ],
               ),
               const SizedBox(height: 24),
@@ -146,8 +179,8 @@ class _ApprovalState extends State<Approval> {
                             shaderCallback: (bounds) => const LinearGradient(
                               colors: [Color(0xffF7B61A), Color(0xffE97A2A)],
                             ).createShader(bounds),
-                            child: const Text(
-                              '₹2,00,000',
+                            child: Text(
+                              format.format(amount),
                               style: TextStyle(
                                 fontSize: 34.0,
                                 color: Colors.white,
@@ -199,9 +232,9 @@ class _ApprovalState extends State<Approval> {
                               title: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: const [
+                                children: [
                                   Text(
-                                    '₹5100',
+                                    _handleCalculation(amount, 48),
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
@@ -241,9 +274,9 @@ class _ApprovalState extends State<Approval> {
                               title: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: const [
+                                children: [
                                   Text(
-                                    '₹6500',
+                                    _handleCalculation(amount, 36),
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
@@ -281,9 +314,9 @@ class _ApprovalState extends State<Approval> {
                               title: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: const [
+                                children: [
                                   Text(
-                                    '₹12000',
+                                    _handleCalculation(amount, 18),
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
@@ -322,6 +355,9 @@ class _ApprovalState extends State<Approval> {
                     onPressed: (_productType == null)
                         ? null
                         : () {
+                            setState(() {
+                              globals.amount = amount;
+                            });
                             Navigator.push(
                               context,
                               MaterialPageRoute(

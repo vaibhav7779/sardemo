@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart' as intl;
+import 'package:sar/global.dart' as globals;
 
 class LoanDisbursed extends StatefulWidget {
   const LoanDisbursed({super.key});
@@ -8,6 +10,12 @@ class LoanDisbursed extends StatefulWidget {
 }
 
 class _LoanDisbursedState extends State<LoanDisbursed> {
+  var format = intl.NumberFormat.currency(
+    locale: 'en_IN',
+    decimalDigits: 0, // change it to get decimal places
+    symbol: '₹ ',
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,8 +69,8 @@ class _LoanDisbursedState extends State<LoanDisbursed> {
                         shaderCallback: (bounds) => const LinearGradient(
                           colors: [Color(0xffF7B61A), Color(0xffE97A2A)],
                         ).createShader(bounds),
-                        child: const Text(
-                          '₹2,00,000',
+                        child: Text(
+                          format.format(globals.amount),
                           style: TextStyle(
                             fontSize: 34.0,
                             color: Colors.white,
