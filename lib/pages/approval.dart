@@ -140,8 +140,8 @@ class _ApprovalState extends State<Approval> {
                         amount = value.toInt();
                       });
                     },
-                    min: 50000,
-                    max: 900000,
+                    min: 5000,
+                    max: 200000,
                   ),
                 ],
               ),
