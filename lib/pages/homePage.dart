@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sar/pages/login.dart';
+import 'package:sar/pages/emailLogin.dart';
+import 'package:sar/pages/smsLogin.dart';
+import 'package:sar/pages/signInOptions.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,7 +25,7 @@ class _HomePageState extends State<HomePage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => LoginPage(),
+                      builder: (context) => SignInOptions(),
                     ));
               },
               child: const Text(
@@ -190,7 +192,7 @@ class _HomePageState extends State<HomePage> {
                         splashColor: Colors.amber,
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => LoginPage()));
+                              builder: (context) => SignInOptions()));
                         },
                         child: const Column(
                           children: [

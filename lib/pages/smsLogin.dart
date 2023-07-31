@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
+import 'package:sar/pages/basicInfo.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
-import 'otp.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 bool isChecked = false;
 
@@ -15,6 +16,14 @@ class LoginPage extends StatefulWidget {
 String cardSel = 'agent';
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController otpController = TextEditingController();
+
+  FirebaseAuth auth = FirebaseAuth.instance;
+  bool otpVisibility = false;
+  User? user;
+  String verificationID = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,32 +45,6 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // BreadCrumb(
-              //   items: <BreadCrumbItem>[
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "HOME",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "PERSONAL LOANS",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "APPLY",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //   ],
-              //   divider: const Icon(Icons.chevron_right),
-              // ),
               const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -174,45 +157,56 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      const Text(
-                        "Please enter accurate information that matches your KYC documents.",
-                        style: const TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w400),
-                      ),
-                      const SizedBox(height: 20),
-                      TextFormField(
-                        autofocus: false,
-                        decoration: const InputDecoration(
-                          labelText: "Your Name",
-                          hintText: "Enter Your Name",
-                          border: OutlineInputBorder(),
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      TextFormField(
-                        autofocus: false,
+                      TextField(
+                        controller: phoneController,
                         decoration: const InputDecoration(
                           labelText: "Mobile Number",
-                          hintText: "Enter Mobile Number",
-                          border: OutlineInputBorder(),
+                          hintText: 'Phone Number',
+                          prefix: Text('+91'),
                         ),
+                        maxLength: 10,
+                        keyboardType: TextInputType.number,
                       ),
-                      const SizedBox(height: 20),
+                      Visibility(
+                        child: TextField(
+                          controller: otpController,
+                          decoration: InputDecoration(
+                            hintText: 'OTP',
+                            prefix: Padding(
+                              padding: EdgeInsets.all(4),
+                              child: Text(''),
+                            ),
+                          ),
+                          maxLength: 6,
+                          keyboardType: TextInputType.number,
+                        ),
+                        visible: otpVisibility,
+                      ),
+
+                      // Visibility(
+                      //   child: OTPTextField(
+                      //       // controller: otpController,
+                      //       obscureText: true,
+                      //       controller: otpController,
+                      //       length: 6,
+                      //       width: MediaQuery.of(context).size.width,
+                      //       textFieldAlignment: MainAxisAlignment.spaceEvenly,
+                      //       fieldWidth: 45,
+                      //       fieldStyle: FieldStyle.box,
+                      //       outlineBorderRadius: 15,
+                      //       style: TextStyle(fontSize: 32),
+                      //       onChanged: (pin) {
+                      //         print("Changed: " + pin);
+                      //       },
+                      //       onCompleted: (pin) {
+                      //         print("Completed: " + pin);
+                      //       }),
+                      //   visible: otpVisibility,
+                      // ),
                       const Padding(
                         padding: EdgeInsets.only(left: 8.0),
                         child: Text(
                             "*We will be sending an OTP to verify your details"),
-                      ),
-                      const SizedBox(height: 24),
-                      TextFormField(
-                        autofocus: false,
-                        decoration: const InputDecoration(
-                          labelText: "PAN",
-                          hintText: "Enter PAN",
-                          border: OutlineInputBorder(),
-                          filled: true, //<-- SEE HERE
-                          fillColor: Color(0xFFFFFFFF),
-                        ),
                       ),
                     ],
                   ),
@@ -225,14 +219,21 @@ class _LoginPageState extends State<LoginPage> {
                   child: Container(
                     width: double.infinity,
                     child: ElevatedButton(
+                      // color: Colors.indigo[900],
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => OTPValidation(),
-                            ));
+                        if (otpVisibility) {
+                          verifyOTP();
+                        } else {
+                          loginWithPhone();
+                        }
                       },
-                      child: const Text("Next"),
+                      child: Text(
+                        otpVisibility ? "Verify OTP" : "Send OTP",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -241,6 +242,69 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
+    );
+  }
+
+  void loginWithPhone() async {
+    auth.verifyPhoneNumber(
+      phoneNumber: "+91" + phoneController.text,
+      verificationCompleted: (PhoneAuthCredential credential) async {
+        await auth.signInWithCredential(credential).then((value) {
+          print("yes.You are logged in successfully");
+        });
+      },
+      verificationFailed: (FirebaseAuthException e) {
+        print(e.message);
+      },
+      codeSent: (String verificationId, int? resendToken) {
+        otpVisibility = true;
+        verificationID = verificationId;
+        setState(() {});
+      },
+      codeAutoRetrievalTimeout: (String verificationId) {},
+    );
+  }
+
+  void verifyOTP() async {
+    PhoneAuthCredential credential = PhoneAuthProvider.credential(
+        verificationId: verificationID, smsCode: otpController.text);
+
+    await auth.signInWithCredential(credential).then(
+      (value) {
+        setState(() {
+          user = FirebaseAuth.instance.currentUser;
+        });
+      },
+    ).whenComplete(
+      () {
+        if (user != null) {
+          Fluttertoast.showToast(
+            msg: "yes.You are logged in successfully",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0,
+          );
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => BasicInformation(),
+            ),
+          );
+        } else {
+          Fluttertoast.showToast(
+            msg: "no.your login is failed",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0,
+          );
+        }
+      },
     );
   }
 }
