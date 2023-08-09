@@ -112,6 +112,7 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.45,
                     child: Card(
                       elevation: 10,
                       shape: RoundedRectangleBorder(
@@ -146,6 +147,7 @@ class _HomePageState extends State<HomePage> {
                     width: 12,
                   ),
                   SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.45,
                     child: Card(
                       elevation: 10,
                       shape: RoundedRectangleBorder(
@@ -182,6 +184,7 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.45,
                     child: Card(
                       elevation: 10,
                       shape: RoundedRectangleBorder(
@@ -221,6 +224,7 @@ class _HomePageState extends State<HomePage> {
                     width: 12,
                   ),
                   SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.45,
                     child: Card(
                       elevation: 10,
                       shape: RoundedRectangleBorder(
