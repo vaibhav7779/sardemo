@@ -108,6 +108,8 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 12.0,
               ),
+
+              // row 1
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -180,8 +182,11 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 14,
               ),
+
+              // row 2
+
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.45,
@@ -201,10 +206,13 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Padding(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 40, vertical: 14),
+                                  horizontal: 45, vertical: 14),
                               child: Column(
                                 children: [
-                                  Icon(Icons.currency_rupee_outlined, size: 30),
+                                  Icon(
+                                    Icons.currency_rupee_outlined,
+                                    size: 30,
+                                  ),
                                   SizedBox(
                                     height: 10,
                                   ),
@@ -230,11 +238,11 @@ class _HomePageState extends State<HomePage> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
-                      child: Column(
+                      child: const Column(
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 48, vertical: 14),
+                                horizontal: 45, vertical: 14),
                             child: Column(
                               children: [
                                 Icon(Icons.house_outlined, size: 30),
@@ -254,6 +262,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
+
               const SizedBox(
                 height: 28,
               ),
