@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                 height: 12.0,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.45,
@@ -122,13 +122,11 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 45, vertical: 14),
+                                horizontal: 48, vertical: 14),
                             child: Column(
                               children: [
-                                Icon(
-                                  Icons.account_balance_wallet_outlined,
-                                  size: 30,
-                                ),
+                                Icon(Icons.account_balance_wallet_outlined,
+                                    size: 30),
                                 SizedBox(
                                   height: 10,
                                 ),
@@ -143,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 12,
                   ),
                   SizedBox(
@@ -157,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 45, vertical: 14),
+                                horizontal: 48, vertical: 14),
                             child: Column(
                               children: [
                                 Icon(Icons.savings_outlined, size: 30),
@@ -177,6 +175,75 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //   children: [
+              //     SizedBox(
+              //       width: MediaQuery.of(context).size.width * 0.45,
+              //       child: Card(
+              //         elevation: 10,
+              //         shape: RoundedRectangleBorder(
+              //           borderRadius: BorderRadius.circular(8.0),
+              //         ),
+              //         child: Column(
+              //           children: [
+              //             Padding(
+              //               padding: EdgeInsets.symmetric(
+              //                   horizontal: 45, vertical: 14),
+              //               child: Column(
+              //                 children: [
+              //                   Icon(
+              //                     Icons.account_balance_wallet_outlined,
+              //                     size: 30,
+              //                   ),
+              //                   SizedBox(
+              //                     height: 10,
+              //                   ),
+              //                   Text(
+              //                     "Current A/C",
+              //                     style: TextStyle(fontSize: 12),
+              //                   )
+              //                 ],
+              //               ),
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     ),
+              //     SizedBox(
+              //       width: 12,
+              //     ),
+              //     SizedBox(
+              //       width: MediaQuery.of(context).size.width * 0.45,
+              //       child: Card(
+              //         elevation: 10,
+              //         shape: RoundedRectangleBorder(
+              //           borderRadius: BorderRadius.circular(8.0),
+              //         ),
+              //         child: Column(
+              //           children: [
+              //             Padding(
+              //               padding: EdgeInsets.symmetric(
+              //                   horizontal: 45, vertical: 14),
+              //               child: Column(
+              //                 children: [
+              //                   Icon(Icons.savings_outlined, size: 30),
+              //                   SizedBox(
+              //                     height: 10,
+              //                   ),
+              //                   Text(
+              //                     "Savings A/C",
+              //                     style: TextStyle(fontSize: 12),
+              //                   )
+              //                 ],
+              //               ),
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
               SizedBox(
                 height: 14,
               ),
