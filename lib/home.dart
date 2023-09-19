@@ -271,7 +271,7 @@ class _HomePageState extends State<HomePage> {
                         splashColor: Colors.amber,
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => SignInOptionsPL()));
+                              builder: (context) => EmailVerificationPL()));
                         },
                         child: const Column(
                           children: [
@@ -340,7 +340,7 @@ class _HomePageState extends State<HomePage> {
                         splashColor: Colors.amber,
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => SignInOptionsHL()));
+                              builder: (context) => EmailVerificationHL()));
                         },
                         child: const Column(
                           children: [

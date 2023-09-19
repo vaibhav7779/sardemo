@@ -42,7 +42,7 @@ class _VerifyITRState extends State<VerifyITR> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(14),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,14 +57,14 @@ class _VerifyITRState extends State<VerifyITR> {
                 currentStep: 4,
                 selectedColor: Color(0xFF45C00B),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 28),
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),
                 ),
                 elevation: 5,
                 child: Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [

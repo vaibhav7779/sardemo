@@ -73,7 +73,7 @@ class _LoanDisbursedState extends State<LoanDisbursed> {
                         child: Text(
                           format.format(globals.amount),
                           style: TextStyle(
-                            fontSize: 34.0,
+                            fontSize: 32.0,
                             color: Colors.white,
                             fontWeight: FontWeight.w700,
                           ),

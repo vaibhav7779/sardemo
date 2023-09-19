@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:sar/HL/verifyITR.dart';
 import 'package:sar/PL/approval.dart';
 import 'package:sar/PL/infoPL.dart';
 import 'package:sar/PL/emailLogin.dart';
@@ -35,6 +36,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomePage(),
+      // home: VerifyITR(),
       // home: StreamBuilder(
       //   stream: FirebaseAuth.instance.authStateChanges(),
       //   builder: (context, snapshot) {

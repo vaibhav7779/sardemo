@@ -179,7 +179,7 @@ class _ApprovalState extends State<Approval> {
                             child: Text(
                               format.format((amount > 0) ? amount : 200000),
                               style: TextStyle(
-                                fontSize: 34.0,
+                                fontSize: 32.0,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
                               ),

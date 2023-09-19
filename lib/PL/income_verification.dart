@@ -88,7 +88,7 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                 selectedColor: Color(0xFF45C00B),
               ),
               const SizedBox(height: 24),
-              Card(
+             Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),
                 ),
@@ -103,24 +103,12 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
                         ),
-                        leading:
-                            // RadioListTile<Occupation>(
-                            //   title: const Text('Self-Employed'),
-                            //   value: Occupation.Salaried,
-                            //   groupValue: _occ,
-                            //   onChanged: (Occupation? value) {
-                            //     setState(() {
-                            //       _occ = value;
-                            //     });
-                            //   },
-                            // ),
-
-                            Radio<Enach1>(
-                          value: Enach1.AccAgg,
-                          groupValue: _enach,
-                          onChanged: (Enach1? value) {
+                        leading: Radio(
+                          value: "Account Aggregator",
+                          groupValue: consent,
+                          onChanged: (value) {
                             setState(() {
-                              _enach = value;
+                              consent = value.toString();
                             });
                           },
                         ),
