@@ -7,14 +7,14 @@ import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 bool isChecked = false;
 
-class BasicInformation extends StatefulWidget {
-  const BasicInformation({super.key});
+class BasicInformationHL extends StatefulWidget {
+  const BasicInformationHL({super.key});
 
   @override
-  State<BasicInformation> createState() => _BasicInformationState();
+  State<BasicInformationHL> createState() => _BasicInformationHLState();
 }
 
-class _BasicInformationState extends State<BasicInformation> {
+class _BasicInformationHLState extends State<BasicInformationHL> {
   bool? check1 = false;
   bool? check2 = false;
   bool _value = false;

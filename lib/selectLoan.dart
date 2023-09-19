@@ -340,7 +340,7 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                         splashColor: Colors.amber,
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => BasicInformation()));
+                              builder: (context) => BasicInformationHL()));
                         },
                         child: const Column(
                           children: [

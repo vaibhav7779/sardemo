@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sar/emailHL.dart';
+import 'package:sar/emailPL.dart';
 // import 'package:sar/HL/SignInHL.dart';
 // import 'package:sar/PL/smsLogin.dart';
 import 'package:sar/signInOptions.dart';
@@ -21,11 +23,11 @@ class _HomePageState extends State<HomePage> {
         actions: <Widget>[
           TextButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SignInOptions(),
-                    ));
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) => SignInOptions(),
+                //     ));
               },
               child: const Text(
                 "Sign In",
@@ -78,11 +80,11 @@ class _HomePageState extends State<HomePage> {
                         // height: 40,
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => SignInOptions(),
-                                ));
+                            // Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //       builder: (context) => SignInOptions(),
+                            //     ));
                           },
                           child: Text('Sign In'),
                           style: ElevatedButton.styleFrom(
@@ -266,8 +268,8 @@ class _HomePageState extends State<HomePage> {
                       child: InkWell(
                         splashColor: Colors.amber,
                         onTap: () {
-                          // Navigator.of(context).push(MaterialPageRoute(
-                          // builder: (context) => SignInOptions()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => EmailVerificationPL()));
                         },
                         child: const Column(
                           children: [
@@ -335,8 +337,8 @@ class _HomePageState extends State<HomePage> {
                       child: InkWell(
                         splashColor: Colors.amber,
                         onTap: () {
-                          // Navigator.of(context).push(MaterialPageRoute(
-                          // builder: (context) => SignInHL()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => EmailVerificationHL()));
                         },
                         child: const Column(
                           children: [
