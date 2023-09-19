@@ -72,46 +72,43 @@ class _AddBankState extends State<AddBank> {
                             fontSize: 14, fontWeight: FontWeight.w400),
                       ),
                       const SizedBox(height: 20),
-                      SizedBox(
-                        height: 50,
-                        child: DropdownButtonFormField(
-                          decoration: const InputDecoration(
-                            enabledBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.black, width: 1),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.black, width: 1),
-                            ),
-                            filled: true,
-                            fillColor: Colors.white,
-                            labelText: 'Choose bank',
-                            labelStyle: TextStyle(color: Colors.grey),
-                            suffixIcon: Icon(
-                              Icons.search,
-                              color: Color.fromRGBO(233, 122, 42, 1),
-                            ),
+                      DropdownButtonFormField(
+                        decoration: const InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1),
                           ),
-                          iconSize: 0.0,
-                          dropdownColor: Colors.white,
-                          value: selectBank,
-                          onChanged: (String? newValue) {
-                            setState(() {
-                              selectBank = newValue!;
-                            });
-                          },
-                          items: itemsOccupation
-                              .map<DropdownMenuItem<String>>((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(
-                                value,
-                                style: const TextStyle(fontSize: 16),
-                              ),
-                            );
-                          }).toList(),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1),
+                          ),
+                          filled: true,
+                          fillColor: Colors.white,
+                          labelText: 'Choose bank',
+                          labelStyle: TextStyle(color: Colors.grey),
+                          suffixIcon: Icon(
+                            Icons.search,
+                            color: Color.fromRGBO(233, 122, 42, 1),
+                          ),
                         ),
+                        iconSize: 0.0,
+                        dropdownColor: Colors.white,
+                        value: selectBank,
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            selectBank = newValue!;
+                          });
+                        },
+                        items: itemsOccupation
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(
+                              value,
+                              // style: const TextStyle(fontSize: 16),
+                            ),
+                          );
+                        }).toList(),
                       ),
 
                       const SizedBox(height: 20),
