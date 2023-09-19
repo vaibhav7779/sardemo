@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sar/HL/mobileOTPHL.dart';
 import 'package:sar/PL/infoPL.dart';
 import 'package:sar/email.dart';
 import 'package:sar/emailPL.dart';
@@ -46,7 +47,7 @@ class _CreateUserHLState extends State<CreateUserHL> {
       showSnackBar(res, context);
     } else {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const BasicInformationPL()));
+          MaterialPageRoute(builder: (context) => const MobileOTPHL()));
     }
   }
 

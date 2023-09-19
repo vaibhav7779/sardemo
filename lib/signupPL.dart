@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sar/PL/infoPL.dart';
+import 'package:sar/PL/mobileOTPPL.dart';
 import 'package:sar/email.dart';
 import 'package:sar/emailPL.dart';
 // import 'package:sar/PL/basicInfo.dart';
@@ -46,7 +47,7 @@ class _CreateUserPLState extends State<CreateUserPL> {
       showSnackBar(res, context);
     } else {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const BasicInformationPL()));
+          MaterialPageRoute(builder: (context) => const MobileOTPPL()));
     }
   }
 

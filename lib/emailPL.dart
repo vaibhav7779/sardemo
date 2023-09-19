@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sar/PL/infoPL.dart';
+import 'package:sar/PL/mobileOTPPL.dart';
 // import 'package:sar/PL/basicInfo.dart';
 // import 'package:sar/PL/signUp.dart';
 import 'package:sar/resources/auth_methods.dart';
@@ -39,7 +40,7 @@ class _EmailVerificationPLState extends State<EmailVerificationPL> {
         email: _emailController.text, password: _passwordController.text);
     if (res == "success") {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const BasicInformationPL()));
+          MaterialPageRoute(builder: (context) => const MobileOTPPL()));
     } else {
       showSnackBar(res, context);
     }
