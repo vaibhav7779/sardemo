@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sar/HL/infoHL.dart';
 import 'package:sar/PL/infoPL.dart';
 import 'package:sar/selectLoan.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
@@ -29,7 +30,7 @@ class _OTPValidationHLState extends State<OTPValidationHL> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("OTP HL"),
+        title: const Text("Home Loan"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
@@ -291,7 +292,7 @@ class _OTPValidationHLState extends State<OTPValidationHL> {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => SelectLoanType(),
+              builder: (context) => BasicInformationHL(),
             ),
           );
         } else {

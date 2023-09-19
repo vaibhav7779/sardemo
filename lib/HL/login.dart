@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sar/HL/infoHL.dart';
 import 'package:sar/HL/otp.dart';
 import 'package:sar/HL/signUpHL.dart';
+import 'package:sar/PL/infoPL.dart';
 // import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
@@ -43,7 +44,7 @@ class _EmailVerificationState extends State<EmailVerification> {
         email: _emailController.text, password: _passwordController.text);
     if (res == "success") {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const BasicInformation()));
+          MaterialPageRoute(builder: (context) => const BasicInformationPL()));
     } else {
       showSnackBar(res, context);
     }

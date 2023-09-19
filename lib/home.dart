@@ -4,6 +4,8 @@ import 'package:sar/emailPL.dart';
 // import 'package:sar/HL/SignInHL.dart';
 // import 'package:sar/PL/smsLogin.dart';
 import 'package:sar/signInOptions.dart';
+import 'package:sar/signInOptionsHL.dart';
+import 'package:sar/signInOptionsPL.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -269,7 +271,7 @@ class _HomePageState extends State<HomePage> {
                         splashColor: Colors.amber,
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => EmailVerificationPL()));
+                          builder: (context) => SignInOptionsPL()));
                         },
                         child: const Column(
                           children: [
@@ -338,7 +340,7 @@ class _HomePageState extends State<HomePage> {
                         splashColor: Colors.amber,
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => EmailVerificationHL()));
+                          builder: (context) => SignInOptionsHL()));
                         },
                         child: const Column(
                           children: [

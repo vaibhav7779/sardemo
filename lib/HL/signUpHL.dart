@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sar/HL/infoHL.dart';
 import 'package:sar/HL/login.dart';
+import 'package:sar/PL/infoPL.dart';
 import 'package:sar/resources/auth_methods.dart';
 import 'package:sar/utils/utils.dart';
 
@@ -42,7 +43,7 @@ class _SignupScreenState extends State<SignupScreen> {
       showSnackBar(res, context);
     } else {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const BasicInformation()));
+          MaterialPageRoute(builder: (context) => const BasicInformationPL()));
     }
   }
 

@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:sar/email.dart';
+import 'package:sar/emailHL.dart';
 import 'package:sar/otp.dart';
+import 'package:sar/otpHL.dart';
 // import 'package:sar/PL/emailLogin.dart';
 // import 'package:sar/PL/smsLogin.dart';
 
-class SignInOptions extends StatefulWidget {
-  const SignInOptions({super.key});
+class SignInOptionsHL extends StatefulWidget {
+  const SignInOptionsHL({super.key});
 
   @override
-  State<SignInOptions> createState() => _SignInOptionsState();
+  State<SignInOptionsHL> createState() => _SignInOptionsHLState();
 }
 
-class _SignInOptionsState extends State<SignInOptions> {
+class _SignInOptionsHLState extends State<SignInOptionsHL> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Perso"),
+        title: const Text("Home Loan"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
@@ -44,7 +46,7 @@ class _SignInOptionsState extends State<SignInOptions> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => EmailVerification()));
+                                builder: (context) => EmailVerificationHL()));
                       },
                       child: const Text("Sign In via Email and Password"),
                     ),
@@ -62,7 +64,7 @@ class _SignInOptionsState extends State<SignInOptions> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LoginPage()));
+                                builder: (context) => OTPValidationHL()));
                       },
                       child: const Text("Sign In via Mobile OTP"),
                     ),

@@ -29,7 +29,7 @@ class _OTPValidationPLState extends State<OTPValidationPL> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("OTP PL"),
+        title: const Text("Personal Loan"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
@@ -291,7 +291,7 @@ class _OTPValidationPLState extends State<OTPValidationPL> {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => SelectLoanType(),
+              builder: (context) => BasicInformationPL(),
             ),
           );
         } else {
