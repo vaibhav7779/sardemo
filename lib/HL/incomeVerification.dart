@@ -94,7 +94,6 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
                         ),
-                        
                         leading: Radio(
                           value: "Account Aggregator",
                           groupValue: consent,
@@ -106,7 +105,7 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                         ),
                       ),
                       const Padding(
-                        padding: EdgeInsets.only(left: 90.0),
+                        padding: EdgeInsets.only(left: 78.0),
                         child: Align(
                           alignment: AlignmentDirectional.topStart,
                           child: Text(
@@ -118,7 +117,7 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                       ),
                       const SizedBox(height: 16),
                       const Padding(
-                        padding: EdgeInsets.only(left:90.0),
+                        padding: EdgeInsets.only(left: 78.0),
                         child: Align(
                           alignment: Alignment.topLeft,
                           child: Chip(

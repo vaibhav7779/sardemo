@@ -88,7 +88,7 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                 selectedColor: Color(0xFF45C00B),
               ),
               const SizedBox(height: 24),
-             Card(
+              Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),
                 ),
@@ -114,7 +114,7 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                         ),
                       ),
                       const Padding(
-                        padding: EdgeInsets.only(left: 66.0),
+                        padding: EdgeInsets.only(left: 78.0),
                         child: Align(
                           alignment: AlignmentDirectional.topStart,
                           child: Text(
@@ -126,7 +126,7 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                       ),
                       const SizedBox(height: 16),
                       const Padding(
-                        padding: EdgeInsets.only(left: 60.0),
+                        padding: EdgeInsets.only(left: 78.0),
                         child: Align(
                           alignment: Alignment.topLeft,
                           child: Chip(
@@ -235,7 +235,6 @@ class _IncomeVerificationState extends State<IncomeVerification> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  
                   onPressed: () {
                     //LoanDisbursed
                     Navigator.push(
