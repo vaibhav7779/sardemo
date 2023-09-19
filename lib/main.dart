@@ -36,8 +36,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: HomePage(),
-      home: AddBank(),
+      home: HomePage(),
+      // home: AddBank(),
       // home: VerifyITR(),
       // home: StreamBuilder(
       //   stream: FirebaseAuth.instance.authStateChanges(),
