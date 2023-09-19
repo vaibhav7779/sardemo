@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import 'package:sar/HL/coApplicatnt.dart';
+import 'package:sar/PL/loanSummary.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
-// import 'package:slider_controller/slider_controller.dart';
+import 'package:sar/global.dart' as globals;
 import 'package:intl/intl.dart' as intl;
 
 enum ProductType { Gold, Silver, Dimond, Blank }
@@ -14,25 +16,23 @@ class Approval extends StatefulWidget {
 }
 
 class _ApprovalState extends State<Approval> {
+  int amount_hl = globals.amount_hl;
   ProductType? _productType;
+
   var format = intl.NumberFormat.currency(
     locale: 'en_IN',
     decimalDigits: 0, // change it to get decimal places
     symbol: '₹ ',
   );
-  String _handleCalculation(amount, months) {
+  String _handleCalculation(amount_hl, months) {
     double rate = 9.5;
-    double interest = (amount * (rate * 0.01)) / months;
-    double total = ((amount / months) + interest).toInt();
+    double interest = (amount_hl * (rate * 0.01)) / months;
+    double total = ((amount_hl / months) + interest).toInt();
 
     String ret = format.format(total);
     // String val = "₹$ret";
     return ret;
   }
-
-  int amount = 10000000;
-  RangeValues values = RangeValues(0, 1);
-  int age = 10000000;
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +55,33 @@ class _ApprovalState extends State<Approval> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // BreadCrumb(
+              //   items: <BreadCrumbItem>[
+              //     BreadCrumbItem(
+              //       content: const Text(
+              //         "HOME",
+              //         style:
+              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+              //     BreadCrumbItem(
+              //       content: const Text(
+              //         "PERSONAL LOANS",
+              //         style:
+              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+              //     BreadCrumbItem(
+              //       content: const Text(
+              //         "APPLY",
+              //         style:
+              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+              //       ),
+              //     ),
+
+              //   ],
+              //   divider: const Icon(Icons.chevron_right),
+              // ),
               const SizedBox(height: 24),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -77,9 +104,9 @@ class _ApprovalState extends State<Approval> {
                     "You have been approved for a",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w200),
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: const [
                       Text(
                         "loan of up to",
                         style: TextStyle(
@@ -104,17 +131,13 @@ class _ApprovalState extends State<Approval> {
                     "you want to apply for",
                     style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
                   Slider(
                     label: "Select Age",
-                    value: age.toDouble(),
+                    value: amount_hl.toDouble(),
                     activeColor: Color(0xffF7B61A),
                     onChanged: (value) {
                       setState(() {
-                        age = value.toInt();
-                        amount = age;
+                        amount_hl = value.toInt();
                       });
                     },
                     min: 5000000,
@@ -155,9 +178,9 @@ class _ApprovalState extends State<Approval> {
                               colors: [Color(0xffF7B61A), Color(0xffE97A2A)],
                             ).createShader(bounds),
                             child: Text(
-                              format.format(amount),
-                              style: const TextStyle(
-                                fontSize: 34.0,
+                              format.format((amount_hl > 0) ? amount_hl : 10000000),
+                              style: TextStyle(
+                                fontSize: 32.0,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
                               ),
@@ -189,7 +212,7 @@ class _ApprovalState extends State<Approval> {
                         ),
                       ),
                       const Text(
-                        'Interest @ 9.5% PA',
+                        'Interest @ 20.88% PA',
                         style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
@@ -209,13 +232,13 @@ class _ApprovalState extends State<Approval> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    _handleCalculation(amount, 240),
+                                    _handleCalculation(amount_hl, 48),
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
                                   ),
                                   Text(
-                                    'x 240 months',
+                                    'x 48 months',
                                     style: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w400),
@@ -251,13 +274,13 @@ class _ApprovalState extends State<Approval> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    _handleCalculation(amount, 180),
+                                    _handleCalculation(amount_hl, 36),
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
                                   ),
                                   Text(
-                                    'x 180 months',
+                                    'x 36 months',
                                     style: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w400),
@@ -291,13 +314,13 @@ class _ApprovalState extends State<Approval> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    _handleCalculation(amount, 144),
-                                    style: const TextStyle(
+                                    _handleCalculation(amount_hl, 18),
+                                    style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
                                   ),
                                   Text(
-                                    'x 144 months',
+                                    'x 18 months',
                                     style: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w400),
@@ -330,10 +353,13 @@ class _ApprovalState extends State<Approval> {
                     onPressed: (_productType == null)
                         ? null
                         : () {
+                            setState(() {
+                              globals.amount_hl = amount_hl;
+                            });
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const CoApplicant(),
+                                builder: (context) => CoApplicant(),
                               ),
                             );
                           },

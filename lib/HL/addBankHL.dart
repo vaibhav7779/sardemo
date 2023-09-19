@@ -107,7 +107,7 @@ class _AddBankState extends State<AddBank> {
                               value: value,
                               child: Text(
                                 value,
-                                style: const TextStyle(fontSize: 14),
+                                style: const TextStyle(fontSize: 16),
                               ),
                             );
                           }).toList(),

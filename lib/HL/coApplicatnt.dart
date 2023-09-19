@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sar/HL/processingFee.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+import 'package:intl/intl.dart' as intl;
+import 'package:sar/global.dart' as globals;
 
 enum Consent { yes, no }
 
@@ -19,7 +21,11 @@ class _CoApplicantState extends State<CoApplicant> {
   String? income;
   Consent? _consent = Consent.yes;
   Income? _income = Income.no;
-
+  var format = intl.NumberFormat.currency(
+    locale: 'en_IN',
+    decimalDigits: 0, // change it to get decimal places
+    symbol: '₹ ',
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,8 +77,10 @@ class _CoApplicantState extends State<CoApplicant> {
                       fontSize: 18,
                     ),
                   ),
-                  const Text(
-                    "₹1,00,00,000",
+                  Text(
+                    format.format(globals.amount_hl),
+
+                    // "₹1,00,00,000",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
