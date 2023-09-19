@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
-import 'package:sar/pages/emailLogin.dart';
-import 'package:sar/pages/smsLogin.dart';
-import 'package:step_progress_indicator/step_progress_indicator.dart';
-import 'package:otp_text_field/otp_field.dart';
-import 'package:otp_text_field/otp_text_field.dart';
-import 'package:otp_text_field/style.dart';
-import 'basicInfo.dart';
+import 'package:sar/email.dart';
+import 'package:sar/otp.dart';
+// import 'package:sar/PL/emailLogin.dart';
+// import 'package:sar/PL/smsLogin.dart';
 
 class SignInOptions extends StatefulWidget {
   const SignInOptions({super.key});
@@ -20,7 +16,7 @@ class _SignInOptionsState extends State<SignInOptions> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Personal Loan"),
+        title: const Text("Home"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),

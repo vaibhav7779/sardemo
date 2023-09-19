@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
+import 'package:sar/PL/infoPL.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/style.dart';
-import 'basicInfo.dart';
+// import 'infoPL.dart';
 
 bool isChecked = false;
 
@@ -142,7 +143,7 @@ class _OTPValidationState extends State<OTPValidation> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => BasicInformation()));
+                                builder: (context) => BasicInformationPL()));
                       },
                       child: const Text("Next"),
                     ),

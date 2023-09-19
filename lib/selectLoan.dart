@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:sar/pages/emailLogin.dart';
-import 'package:sar/pages/smsLogin.dart';
-import 'package:sar/pages/signInOptions.dart';
-import 'package:step_progress_indicator/step_progress_indicator.dart';
+import 'package:sar/HL/infoHL.dart';
+import 'package:sar/PL/infoPL.dart';
+// import 'package:sar/HL/infoHL.dart';
+import 'package:sar/signInOptions.dart';
+// import 'package:sar/HL/SignInHL.dart';
+// import 'package:sar/PL/smsLogin.dart';
+// import 'package:sar/signInOptions.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class SelectLoanType extends StatefulWidget {
+  const SelectLoanType({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<SelectLoanType> createState() => _SelectLoanTypeState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _SelectLoanTypeState extends State<SelectLoanType> {
   bool? check1 = false;
 
   @override
@@ -22,14 +25,14 @@ class _HomePageState extends State<HomePage> {
         actions: <Widget>[
           TextButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SignInOptions(),
-                    ));
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) => SignInOptions(),
+                //     ));
               },
               child: const Text(
-                "Sign In",
+                "Welcome",
                 style: TextStyle(color: Colors.white),
               )),
           const SizedBox(width: 15)
@@ -65,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                         child: const Padding(
                           padding: EdgeInsets.fromLTRB(20, 20, 8, 8),
                           child: Text(
-                            'Get your       pre-approved personal loan instantly.',
+                            'Create an\naccount and\nget a loan in a\nfew easy steps.',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
@@ -78,7 +81,13 @@ class _HomePageState extends State<HomePage> {
                         width: 100,
                         // height: 40,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            // Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //       builder: (context) => SignInOptions(),
+                            //     ));
+                          },
                           child: Text('Apply Now'),
                           style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
@@ -262,7 +271,7 @@ class _HomePageState extends State<HomePage> {
                         splashColor: Colors.amber,
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => SignInOptions()));
+                              builder: (context) => BasicInformationPL()));
                         },
                         child: const Column(
                           children: [
@@ -290,6 +299,35 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(
                     width: 12,
                   ),
+                  // SizedBox(
+                  //   width: MediaQuery.of(context).size.width * 0.45,
+                  //   child: Card(
+                  //     elevation: 10,
+                  //     shape: RoundedRectangleBorder(
+                  //       borderRadius: BorderRadius.circular(8.0),
+                  //     ),
+                  //     child: Column(
+                  //       children: [
+                  //         Padding(
+                  //           padding: EdgeInsets.symmetric(
+                  //               horizontal: 48, vertical: 14),
+                  //           child: Column(
+                  //             children: [
+                  //               Icon(Icons.house_outlined, size: 30),
+                  //               SizedBox(
+                  //                 height: 10,
+                  //               ),
+                  //               Text(
+                  //                 "Home Loan",
+                  //                 style: TextStyle(fontSize: 12),
+                  //               )
+                  //             ],
+                  //           ),
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.45,
                     child: Card(
@@ -297,25 +335,33 @@ class _HomePageState extends State<HomePage> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 48, vertical: 14),
-                            child: Column(
-                              children: [
-                                Icon(Icons.house_outlined, size: 30),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  "Home Loan",
-                                  style: TextStyle(fontSize: 12),
-                                )
-                              ],
+                      clipBehavior: Clip.hardEdge,
+                      child: InkWell(
+                        splashColor: Colors.amber,
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => BasicInformation()));
+                        },
+                        child: const Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 40, vertical: 14),
+                              child: Column(
+                                children: [
+                                  Icon(Icons.house_outlined, size: 30),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    "Home Loan",
+                                    style: TextStyle(fontSize: 12),
+                                  )
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -345,8 +391,8 @@ class _HomePageState extends State<HomePage> {
                   splashColor:
                       const Color.fromRGBO(255, 31, 41, 1).withAlpha(30),
                   onTap: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => LoginPage()));
+                    // Navigator.of(context).push(
+                    // MaterialPageRoute(builder: (context) => LoginPage()));
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(20),
@@ -433,8 +479,8 @@ class _HomePageState extends State<HomePage> {
                   splashColor:
                       const Color.fromRGBO(255, 31, 41, 1).withAlpha(30),
                   onTap: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => LoginPage()));
+                    // Navigator.of(context).push(MaterialPageRoute(
+                    // builder: (context) => BasicInformationPL()));
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(20),
@@ -521,8 +567,8 @@ class _HomePageState extends State<HomePage> {
                   splashColor:
                       const Color.fromRGBO(255, 31, 41, 1).withAlpha(30),
                   onTap: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => LoginPage()));
+                    // Navigator.of(context).push(
+                    // MaterialPageRoute(builder: (context) => LoginPage()));
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(20),

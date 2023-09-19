@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sar/pages/basicInfo.dart';
+import 'package:sar/PL/infoPL.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -290,7 +290,7 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => BasicInformation(),
+              builder: (context) => BasicInformationPL(),
             ),
           );
         } else {

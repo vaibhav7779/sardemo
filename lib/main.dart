@@ -2,35 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:sar/pages/approval.dart';
-import 'package:sar/pages/basicInfo.dart';
-import 'package:sar/pages/emailLogin.dart';
-// import 'package:sar/pages/addressConfirm.dart';
-// import 'package:sar/pages/basicInfo.dart';
-// import 'package:sar/pages/e-nach.dart';
-// import 'package:sar/pages/employment.dart';
-// import 'package:sar/pages/homePage.dart';
-// import 'package:sar/pages/income_verification.dart';
-// import 'package:sar/pages/loan-disbursed.dart';
-// import 'package:sar/pages/loan-disbursed.dart';
-// import 'package:sar/pages/document-sign.dart';
-// import 'package:sar/pages/login.dart';
-// import 'package:sar/pages/basicInfo.dart';
-// import 'package:sar/pages/loanSummary.dart';
-import 'package:sar/pages/homePage.dart';
-import 'package:sar/pages/smsLogin.dart';
-import 'package:sar/pages/signUp.dart';
-// import 'package:sar/pages/testing/dummylogin.dart';
-// import 'package:sar/pages/thirdparty.dart';
-// import 'package:sar/pages/thirdparty2.dart';
-// import 'package:sar/pages/login.dart';
-// import 'package:sar/palette.dart';
-// import 'package:sar/pages/addressConfirm.dart';
-// import 'package:sar/pages/login.dart';
-// import 'package:sar/pages/otp.dart';
-// import 'package:sar/pages/otp.dart';
-// import 'package:sar/utils/routes.dart';
-// import 'package:sar/pages/thirdparty2.dart';
+import 'package:sar/PL/approval.dart';
+import 'package:sar/PL/infoPL.dart';
+import 'package:sar/PL/emailLogin.dart';
+import 'package:sar/home.dart';
+import 'package:sar/selectLoan.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -58,7 +34,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
+      // home: HomePage(),
       home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
@@ -66,7 +42,7 @@ class _MyAppState extends State<MyApp> {
             // Checking if the snapshot has any data or not
             if (snapshot.hasData) {
               // if snapshot has data which means user is logged in then we check the width of screen and accordingly display the screen layout
-              return const BasicInformation();
+              return const SelectLoanType();
             } else if (snapshot.hasError) {
               return Center(
                 child: Text('${snapshot.error}'),

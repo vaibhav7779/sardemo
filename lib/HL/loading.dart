@@ -1,8 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:sar/pages/approval.dart';
-import 'package:sar/pages/loan-disbursed.dart';
+import 'package:sar/HL/approvaHL.dart';
+// import 'package:sar/pages/approval.dart';
+// import 'package:sar/pages/loan-disbursed.dart';
 
 class Loading extends StatefulWidget {
   final String nextPage;
@@ -15,12 +16,11 @@ class Loading extends StatefulWidget {
 class _LoadingState extends State<Loading> {
   @override
   initState() {
-    Timer(Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) =>
-              widget.nextPage == 'approval' ? Approval() : LoanDisbursed(),
+          builder: (context) => const Approval(),
         ),
       );
     });
@@ -30,7 +30,7 @@ class _LoadingState extends State<Loading> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Personal Loan"),
+        title: const Text("Home Loan"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
@@ -41,7 +41,7 @@ class _LoadingState extends State<Loading> {
         ],
       ),
       body: SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Stack(
@@ -63,7 +63,7 @@ class _LoadingState extends State<Loading> {
                         height: 120,
                         width: 120,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       const Text(
@@ -81,7 +81,7 @@ class _LoadingState extends State<Loading> {
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w400),
                       ),
-                      const Text("offer for you",
+                      const Text("offer for your dream home",
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.w400)),
                     ],

@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
+import 'package:sar/PL/add_bank.dart';
+import 'package:sar/PL/employment.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 bool isChecked = false;
 
-class AddressConfirm extends StatefulWidget {
-  const AddressConfirm({super.key});
+class BasicInformationPL extends StatefulWidget {
+  const BasicInformationPL({super.key});
 
   @override
-  State<AddressConfirm> createState() => _AddressConfirmState();
+  State<BasicInformationPL> createState() => _BasicInformationPLState();
 }
 
-bool detailsRadio = false;
-bool temrsRadio = false;
+class _BasicInformationPLState extends State<BasicInformationPL> {
+  bool? check1 = false;
+  bool? check2 = false;
+  bool _value = false;
+  bool _value1 = false;
 
-class _AddressConfirmState extends State<AddressConfirm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,8 +87,99 @@ class _AddressConfirmState extends State<AddressConfirm> {
               ),
               const SizedBox(height: 24),
               const Text(
+                "Personal Details",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              const SizedBox(height: 20),
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                elevation: 5,
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      const Text(
+                        "We have fetched below details from our records",
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w400),
+                      ),
+                      const SizedBox(height: 20),
+                      TextFormField(
+                        autofocus: false,
+                        initialValue: "Amit Kumar",
+                        decoration: const InputDecoration(
+                          labelText: "Name",
+                          border: OutlineInputBorder(),
+                          filled: true, //<-- SEE HERE
+                          fillColor: Color(0xFFF5F5F5),
+                        ),
+                        readOnly: true,
+                      ),
+                      const SizedBox(height: 20),
+                      TextFormField(
+                        autofocus: false,
+                        initialValue: "AAAAA000A",
+                        decoration: const InputDecoration(
+                          labelText: "PAN",
+                          border: OutlineInputBorder(),
+                          filled: true, //<-- SEE HERE
+                          fillColor: Color(0xFFF5F5F5),
+                        ),
+                        readOnly: true,
+                      ),
+                      const SizedBox(height: 20),
+                      TextFormField(
+                        autofocus: false,
+                        initialValue: "Rita Ramesh",
+                        decoration: const InputDecoration(
+                          labelText: "Mother's Name",
+                          border: OutlineInputBorder(),
+                          filled: true, //<-- SEE HERE
+                          fillColor: Color(0xFFF5F5F5),
+                        ),
+                        readOnly: true,
+                      ),
+                      const SizedBox(height: 20),
+                      TextFormField(
+                        autofocus: false,
+                        initialValue: "01/01/1992",
+                        decoration: const InputDecoration(
+                          labelText: "DOB",
+                          border: OutlineInputBorder(),
+                          filled: true, //<-- SEE HERE
+                          fillColor: Color(0xFFF5F5F5),
+                        ),
+                        readOnly: true,
+                      ),
+                      const SizedBox(height: 20),
+                      TextFormField(
+                        autofocus: false,
+                        initialValue: "Male",
+                        decoration: const InputDecoration(
+                          labelText: "Gender",
+                          border: OutlineInputBorder(),
+                          filled: true, //<-- SEE HERE
+                          fillColor: Color(0xFFF5F5F5),
+                        ),
+                        readOnly: true,
+                      ),
+                      const SizedBox(height: 20),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 32.0,
+              ),
+              const Text(
                 "Address",
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
                 ),
@@ -102,7 +197,7 @@ class _AddressConfirmState extends State<AddressConfirm> {
                     children: [
                       const Text(
                         "Please confirm your address",
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w400),
                       ),
                       const SizedBox(height: 20),
@@ -137,17 +232,17 @@ class _AddressConfirmState extends State<AddressConfirm> {
                       Row(
                         children: [
                           Checkbox(
-                            value: detailsRadio,
+                            value: _value,
                             onChanged: (value) {
                               setState(() {
-                                detailsRadio = value!;
+                                _value = value!;
                               });
                             },
                           ),
                           const SizedBox(width: 10),
                           const Text(
                             "I agree my details are correct",
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w400,
                             ),
@@ -158,18 +253,18 @@ class _AddressConfirmState extends State<AddressConfirm> {
                       Row(
                         children: [
                           Checkbox(
-                            value: temrsRadio,
-                            onChanged: (value) {
+                            value: _value1,
+                            onChanged: (bool? _value) {
                               setState(() {
-                                temrsRadio = value!;
+                                _value1 = _value!;
                               });
                             },
                           ),
                           const SizedBox(width: 10),
                           const Flexible(
-                            child: const Text(
+                            child: Text(
                               "I agree to the Terms and Conditions and Privacy, and give my consent to Saraswat Bank as the lender to collect, store and verify my credit report from credit bureaus and KYC details (from CERSA) for processing loan application.",
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -185,7 +280,19 @@ class _AddressConfirmState extends State<AddressConfirm> {
               Container(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: _value == true && _value1 == true
+                      // check1 == false || check2 == false
+                      //     ? null
+                      //     :
+                      ? () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Employment(),
+                            ),
+                          );
+                        }
+                      : null,
                   child: const Text("Next"),
                 ),
               ),

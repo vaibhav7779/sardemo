@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:sar/pages/loanSummary.dart';
-import 'e-nach4.dart';
+import 'package:sar/PL/loanSummary.dart';
+import 'package:sar/PL/thirdparty2.dart';
 
-class Enach extends StatefulWidget {
-  const Enach({super.key});
+class ThirdParty extends StatefulWidget {
+  const ThirdParty({super.key});
 
   @override
-  State<Enach> createState() => _ThirdPartState();
+  State<ThirdParty> createState() => _ThirdPartState();
 }
 
-class _ThirdPartState extends State<Enach> {
+class _ThirdPartState extends State<ThirdParty> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,17 +22,17 @@ class _ThirdPartState extends State<Enach> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Fourenach(),
+                  builder: (context) => third(),
                 ),
               );
             },
             child: Padding(
-              padding: const EdgeInsets.all(18.0),
+              padding: const EdgeInsets.all(10.0),
               child: Image.asset(
-                "assets/bank.png",
+                "assets/hd1.png",
                 fit: BoxFit.cover,
                 width: 400,
-                height: 710,
+                height: 740,
               ),
             ),
           ),

@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:sar/pages/basicInfo.dart';
-import 'package:sar/pages/emailLogin.dart';
+import 'package:sar/email.dart';
+// import 'package:sar/PL/basicInfo.dart';
+// import 'package:sar/PL/emailLogin.dart';
 import 'package:sar/resources/auth_methods.dart';
+import 'package:sar/selectLoan.dart';
 import 'package:sar/utils/utils.dart';
 
-class SignupScreen extends StatefulWidget {
-  const SignupScreen({Key? key}) : super(key: key);
+class CreateUser extends StatefulWidget {
+  const CreateUser({Key? key}) : super(key: key);
 
   @override
-  State<SignupScreen> createState() => _SignupScreenState();
+  State<CreateUser> createState() => _CreateUserState();
 }
 
-class _SignupScreenState extends State<SignupScreen> {
+class _CreateUserState extends State<CreateUser> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -42,7 +44,7 @@ class _SignupScreenState extends State<SignupScreen> {
       showSnackBar(res, context);
     } else {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const BasicInformation()));
+          MaterialPageRoute(builder: (context) => const SelectLoanType()));
     }
   }
 
@@ -59,7 +61,7 @@ class _SignupScreenState extends State<SignupScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const Text("Personal Loan"),
+        title: const Text("Home"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),

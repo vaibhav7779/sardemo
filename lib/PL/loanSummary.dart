@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
-import 'package:sar/pages/document-sign.dart';
-import 'package:sar/pages/thirdparty.dart';
+import 'package:sar/PL/document-sign.dart';
+import 'package:sar/PL/thirdparty.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:intl/intl.dart' as intl;
 import 'package:sar/global.dart' as globals;

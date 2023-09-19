@@ -1,10 +1,17 @@
-import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:sar/pages/basicInfo.dart';
-import 'package:sar/pages/signUp.dart';
+import 'package:sar/HL/infoHL.dart';
+import 'package:sar/HL/otp.dart';
+import 'package:sar/HL/signUpHL.dart';
+// import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
+import 'package:step_progress_indicator/step_progress_indicator.dart';
+
+// import 'package:country_picker/country_picker.dart';
+// import 'package:flutter/material.dart';
+// import 'package:sar/PL/basicInfo.dart';
+// import 'package:sar/PL/signUp.dart';
 import 'package:sar/resources/auth_methods.dart';
 import 'package:sar/utils/utils.dart';
-import 'package:step_progress_indicator/step_progress_indicator.dart';
+// import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 bool isChecked = false;
 
@@ -57,7 +64,7 @@ class _EmailVerificationState extends State<EmailVerification> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Personal Loan"),
+        title: const Text("Home Loan"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
@@ -230,7 +237,6 @@ class _EmailVerificationState extends State<EmailVerification> {
                 ),
               ),
               const SizedBox(height: 40),
-
               Center(
                 child: Align(
                   alignment: Alignment.bottomCenter,
@@ -251,7 +257,6 @@ class _EmailVerificationState extends State<EmailVerification> {
                   ),
                 ),
               ),
-              
               const SizedBox(
                 height: 20,
               ),

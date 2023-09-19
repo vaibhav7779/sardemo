@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
-import 'package:sar/pages/approval.dart';
-import 'package:sar/pages/loanSummary.dart';
+import 'package:breadcrumbs/breadcrumbs.dart';
+import 'package:sar/HL/approvaHL.dart';
+import 'package:sar/HL/eNach.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
-
-import 'e-nach.dart';
-import 'loan-disbursed.dart';
 
 bool isChecked = true;
 
@@ -26,12 +23,12 @@ class _IncomeVerificationState extends State<IncomeVerification> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Personal Loan"),
+        title: const Text("Home Loan"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: <Widget>[
+        actions: const <Widget>[
           Icon(Icons.question_mark_rounded),
           SizedBox(width: 15)
         ],
@@ -73,7 +70,7 @@ class _IncomeVerificationState extends State<IncomeVerification> {
               const SizedBox(height: 20),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [Text("Income Verification"), Text("5/11")],
+                children: [Text("Income Verification"), Text("5/11")],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
@@ -234,14 +231,14 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Enach(),
+                          builder: (context) => const Approval(),
                         ));
                   },
-                  child: Text("Explore more options"),
                   style: ElevatedButton.styleFrom(
-                      side: BorderSide(color: Color(0xFFB81C22)),
-                      foregroundColor: Color(0xFFB81C22),
-                      backgroundColor: Color(0xFFFFFFFF)),
+                      side: const BorderSide(color: Color(0xFFB81C22)),
+                      foregroundColor: const Color(0xFFB81C22),
+                      backgroundColor: const Color(0xFFFFFFFF)),
+                  child: const Text("Explore more options"),
                 ),
               ),
               const SizedBox(
@@ -256,138 +253,15 @@ class _IncomeVerificationState extends State<IncomeVerification> {
               Center(
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Enach(),
+                              builder: (context) => const Enach(),
                             ));
-
-                        // showModalBottomSheet<void>(
-                        //   shape: const RoundedRectangleBorder(
-                        //     borderRadius: BorderRadius.vertical(
-                        //       top: Radius.circular(20),
-                        //     ),
-                        //   ),
-                        //   context: context,
-                        //   builder: (BuildContext context) {
-                        //     return SizedBox(
-                        //       height: 330,
-                        //       child: Padding(
-                        //         padding: const EdgeInsets.symmetric(
-                        //             vertical: 1, horizontal: 10),
-                        //         child: Column(
-                        //           mainAxisAlignment:
-                        //               MainAxisAlignment.spaceEvenly,
-                        //           children: <Widget>[
-                        //             const Text(
-                        //               'LINK YOUR ACCOUNTS',
-                        //               style: TextStyle(
-                        //                 fontSize: 10,
-                        //                 // fontWeight: FontWeight.w700,
-                        //               ),
-                        //             ),
-                        //             const Text(
-                        //               'Select the account with your primary source of income',
-                        //               style: TextStyle(
-                        //                 fontSize: 14,
-                        //               ),
-                        //             ),
-                        //             Column(
-                        //               children: <Widget>[
-                        //                 ListTile(
-                        //                   leading:
-                        //                       Image.asset('assets/bob.png'),
-                        //                   title: const Text(
-                        //                     'Bank of Baroda',
-                        //                     style: TextStyle(fontSize: 14),
-                        //                   ),
-                        //                   subtitle: const Text(
-                        //                       'Savings ********1234 ',
-                        //                       style: TextStyle(
-                        //                           fontSize: 12,
-                        //                           color: Color.fromRGBO(
-                        //                               186, 186, 186, 1))),
-                        //                   trailing: Checkbox(
-                        //                     value: check1,
-                        //                     onChanged: (bool? value) {
-                        //                       setState(() {
-                        //                         check1 = value;
-                        //                       });
-                        //                     },
-                        //                   ),
-                        //                 ),
-                        //                 ListTile(
-                        //                   leading:
-                        //                       Image.asset('assets/icici.png'),
-                        //                   title: const Text(
-                        //                     'ICICI',
-                        //                     style: TextStyle(fontSize: 14),
-                        //                   ),
-                        //                   subtitle: const Text(
-                        //                       'Savings ********1234 ',
-                        //                       style: TextStyle(
-                        //                           fontSize: 12,
-                        //                           color: Color.fromRGBO(
-                        //                               186, 186, 186, 1))),
-                        //                   trailing: Checkbox(
-                        //                     value: check2,
-                        //                     onChanged: (bool? value) {
-                        //                       setState(() {
-                        //                         check2 = value;
-                        //                       });
-                        //                     },
-                        //                   ),
-                        //                 ),
-                        //                 ListTile(
-                        //                   leading:
-                        //                       Image.asset('assets/HDFC.png'),
-                        //                   title: const Text(
-                        //                     'HDFC',
-                        //                     style: TextStyle(fontSize: 14),
-                        //                   ),
-                        //                   subtitle: const Text(
-                        //                       'Savings ********1234 ',
-                        //                       style: TextStyle(
-                        //                           fontSize: 12,
-                        //                           color: Color.fromRGBO(
-                        //                               186, 186, 186, 1))),
-                        //                   trailing: Checkbox(
-                        //                     value: check3,
-                        //                     onChanged: (bool? value) {
-                        //                       setState(() {
-                        //                         check3 = value;
-                        //                       });
-                        //                     },
-                        //                   ),
-                        //                 ),
-                        //               ],
-                        //             ),
-                        //             SizedBox(
-                        //               width: double.infinity,
-                        //               child: ElevatedButton(
-                        //                 onPressed: () {
-
-                        //                   //LoanDisbursed
-                        //                   Navigator.push(
-                        //                       context,
-                        //                       MaterialPageRoute(
-                        //                         builder: (context) =>
-                        //                             Approval(),
-                        //                       ));
-                        //                 },
-                        //                 child: const Text("Link Account"),
-                        //               ),
-                        //             ),
-                        //           ],
-                        //         ),
-                        //       ),
-                        //     );
-                        //   },
-                        // );
                       },
                       child: const Text("Next"),
                     ),

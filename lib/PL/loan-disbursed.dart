@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
 import 'package:sar/global.dart' as globals;
+import 'package:sar/selectLoan.dart';
 
 class LoanDisbursed extends StatefulWidget {
   const LoanDisbursed({super.key});
@@ -160,7 +161,12 @@ class _LoanDisbursedState extends State<LoanDisbursed> {
                 child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SelectLoanType()));
+                    },
                     child: const Text("Go to homepage"),
                   ),
                 ),
