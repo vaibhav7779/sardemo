@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:sar/HL/addBankHL.dart';
 import 'package:sar/HL/verifyITR.dart';
 import 'package:sar/PL/approval.dart';
 import 'package:sar/PL/infoPL.dart';
@@ -35,7 +36,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      // home: HomePage(),
+      home: AddBank(),
       // home: VerifyITR(),
       // home: StreamBuilder(
       //   stream: FirebaseAuth.instance.authStateChanges(),

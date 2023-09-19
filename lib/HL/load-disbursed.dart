@@ -67,7 +67,7 @@ class _LoanDisbursedState extends State<LoanDisbursed> {
                   ),
                 ),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 90),
               Align(
                 alignment: Alignment.bottomCenter,
                 child: SizedBox(
