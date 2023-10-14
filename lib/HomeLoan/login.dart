@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:sar/HomeLoan/mobile_otp.dart';
+import 'package:sar/HomeLoan/sign_up.dart';
+import 'package:sar/PersonalLoan/information.dart';
+// import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
+import 'package:step_progress_indicator/step_progress_indicator.dart';
+
+// import 'package:country_picker/country_picker.dart';
+// import 'package:flutter/material.dart';
 // import 'package:sar/PL/basicInfo.dart';
 // import 'package:sar/PL/signUp.dart';
 import 'package:sar/resources/auth_methods.dart';
-import 'package:sar/signupHL.dart';
 import 'package:sar/utils/utils.dart';
-import 'package:step_progress_indicator/step_progress_indicator.dart';
-
+// import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 bool isChecked = false;
 
-class EmailVerificationHL extends StatefulWidget {
-  const EmailVerificationHL({super.key});
+class EmailVerification extends StatefulWidget {
+  const EmailVerification({super.key});
 
   @override
-  State<EmailVerificationHL> createState() => _EmailVerificationHLState();
+  State<EmailVerification> createState() => _EmailVerificationState();
 }
 
 String cardSel = 'agent';
 
-class _EmailVerificationHLState extends State<EmailVerificationHL> {
+class _EmailVerificationState extends State<EmailVerification> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _isLoading = false;
@@ -38,7 +42,7 @@ class _EmailVerificationHLState extends State<EmailVerificationHL> {
         email: _emailController.text, password: _passwordController.text);
     if (res == "success") {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const MobileOTPHL()));
+          MaterialPageRoute(builder: (context) => const BasicInformationPL()));
     } else {
       showSnackBar(res, context);
     }
@@ -50,7 +54,7 @@ class _EmailVerificationHLState extends State<EmailVerificationHL> {
   void navigateToSignUp() {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => const CreateUserHL(),
+        builder: (context) => const SignupScreen(),
       ),
     );
   }

@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:sar/HomeLoan/information.dart';
-import 'package:sar/PersonalLoan/information.dart';
-// import 'package:sar/HL/infoHL.dart';
+import 'package:sar/HomeLoan/sign_in.dart';
+import 'package:sar/PersonalLoan/sms_login.dart';
 import 'package:sar/signInOptions.dart';
-// import 'package:sar/HL/SignInHL.dart';
-// import 'package:sar/PL/smsLogin.dart';
-// import 'package:sar/signInOptions.dart';
 
-class SelectLoanType extends StatefulWidget {
-  const SelectLoanType({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<SelectLoanType> createState() => _SelectLoanTypeState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _SelectLoanTypeState extends State<SelectLoanType> {
+class _HomePageState extends State<HomePage> {
   bool? check1 = false;
 
   @override
@@ -32,7 +28,7 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                 //     ));
               },
               child: const Text(
-                "Welcome",
+                "Sign In",
                 style: TextStyle(color: Colors.white),
               )),
           const SizedBox(width: 15)
@@ -88,7 +84,7 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                             //       builder: (context) => SignInOptions(),
                             //     ));
                           },
-                          child: Text('Apply Now'),
+                          child: Text('Sign In'),
                           style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
                                 borderRadius:
@@ -271,7 +267,7 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                         splashColor: Colors.amber,
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => BasicInformationPL()));
+                              builder: (context) => SignInOptions()));
                         },
                         child: const Column(
                           children: [
@@ -340,7 +336,7 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                         splashColor: Colors.amber,
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => BasicInformationHL()));
+                              builder: (context) => SignInHL()));
                         },
                         child: const Column(
                           children: [
@@ -391,8 +387,8 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                   splashColor:
                       const Color.fromRGBO(255, 31, 41, 1).withAlpha(30),
                   onTap: () {
-                    // Navigator.of(context).push(
-                    // MaterialPageRoute(builder: (context) => LoginPage()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => LoginPage()));
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(20),
@@ -479,8 +475,8 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                   splashColor:
                       const Color.fromRGBO(255, 31, 41, 1).withAlpha(30),
                   onTap: () {
-                    // Navigator.of(context).push(MaterialPageRoute(
-                    // builder: (context) => BasicInformationPL()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => LoginPage()));
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(20),
@@ -567,8 +563,8 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                   splashColor:
                       const Color.fromRGBO(255, 31, 41, 1).withAlpha(30),
                   onTap: () {
-                    // Navigator.of(context).push(
-                    // MaterialPageRoute(builder: (context) => LoginPage()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => LoginPage()));
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(20),

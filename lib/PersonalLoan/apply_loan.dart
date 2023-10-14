@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:sar/HomeLoan/information.dart';
-import 'package:sar/PersonalLoan/information.dart';
-// import 'package:sar/HL/infoHL.dart';
+import 'package:sar/PersonalLoan/sms_login.dart';
 import 'package:sar/signInOptions.dart';
-// import 'package:sar/HL/SignInHL.dart';
-// import 'package:sar/PL/smsLogin.dart';
-// import 'package:sar/signInOptions.dart';
 
-class SelectLoanType extends StatefulWidget {
-  const SelectLoanType({super.key});
+class ApplyLoan extends StatefulWidget {
+  const ApplyLoan({super.key});
 
   @override
-  State<SelectLoanType> createState() => _SelectLoanTypeState();
+  State<ApplyLoan> createState() => _ApplyLoanState();
 }
 
-class _SelectLoanTypeState extends State<SelectLoanType> {
+class _ApplyLoanState extends State<ApplyLoan> {
   bool? check1 = false;
 
   @override
@@ -25,14 +20,14 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
         actions: <Widget>[
           TextButton(
               onPressed: () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //       builder: (context) => SignInOptions(),
-                //     ));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SignInOptions(),
+                    ));
               },
               child: const Text(
-                "Welcome",
+                "Sign In",
                 style: TextStyle(color: Colors.white),
               )),
           const SizedBox(width: 15)
@@ -55,7 +50,7 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                     Container(
                       alignment: Alignment.center,
                       child: Image.asset(
-                        'assets/homePage.png',
+                        'assets/ApplyLoan.png',
                         height: 191,
                         width: double.infinity,
                         fit: BoxFit.cover,
@@ -81,14 +76,8 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                         width: 100,
                         // height: 40,
                         child: ElevatedButton(
-                          onPressed: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //       builder: (context) => SignInOptions(),
-                            //     ));
-                          },
-                          child: Text('Apply Now'),
+                          onPressed: () {},
+                          child: Text('Sign In'),
                           style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
                                 borderRadius:
@@ -271,7 +260,7 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                         splashColor: Colors.amber,
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => BasicInformationPL()));
+                              builder: (context) => SignInOptions()));
                         },
                         child: const Column(
                           children: [
@@ -299,35 +288,6 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                   const SizedBox(
                     width: 12,
                   ),
-                  // SizedBox(
-                  //   width: MediaQuery.of(context).size.width * 0.45,
-                  //   child: Card(
-                  //     elevation: 10,
-                  //     shape: RoundedRectangleBorder(
-                  //       borderRadius: BorderRadius.circular(8.0),
-                  //     ),
-                  //     child: Column(
-                  //       children: [
-                  //         Padding(
-                  //           padding: EdgeInsets.symmetric(
-                  //               horizontal: 48, vertical: 14),
-                  //           child: Column(
-                  //             children: [
-                  //               Icon(Icons.house_outlined, size: 30),
-                  //               SizedBox(
-                  //                 height: 10,
-                  //               ),
-                  //               Text(
-                  //                 "Home Loan",
-                  //                 style: TextStyle(fontSize: 12),
-                  //               )
-                  //             ],
-                  //           ),
-                  //         ),
-                  //       ],
-                  //     ),
-                  //   ),
-                  // ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.45,
                     child: Card(
@@ -335,33 +295,25 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
-                      clipBehavior: Clip.hardEdge,
-                      child: InkWell(
-                        splashColor: Colors.amber,
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => BasicInformationHL()));
-                        },
-                        child: const Column(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 40, vertical: 14),
-                              child: Column(
-                                children: [
-                                  Icon(Icons.house_outlined, size: 30),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    "Home Loan",
-                                    style: TextStyle(fontSize: 12),
-                                  )
-                                ],
-                              ),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 48, vertical: 14),
+                            child: Column(
+                              children: [
+                                Icon(Icons.house_outlined, size: 30),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  "Home Loan",
+                                  style: TextStyle(fontSize: 12),
+                                )
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -391,8 +343,8 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                   splashColor:
                       const Color.fromRGBO(255, 31, 41, 1).withAlpha(30),
                   onTap: () {
-                    // Navigator.of(context).push(
-                    // MaterialPageRoute(builder: (context) => LoginPage()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => LoginPage()));
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(20),
@@ -479,8 +431,8 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                   splashColor:
                       const Color.fromRGBO(255, 31, 41, 1).withAlpha(30),
                   onTap: () {
-                    // Navigator.of(context).push(MaterialPageRoute(
-                    // builder: (context) => BasicInformationPL()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => LoginPage()));
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(20),
@@ -567,8 +519,8 @@ class _SelectLoanTypeState extends State<SelectLoanType> {
                   splashColor:
                       const Color.fromRGBO(255, 31, 41, 1).withAlpha(30),
                   onTap: () {
-                    // Navigator.of(context).push(
-                    // MaterialPageRoute(builder: (context) => LoginPage()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => LoginPage()));
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(20),

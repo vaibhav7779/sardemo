@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:sar/PersonalLoan/information.dart';
-import 'package:sar/PersonalLoan/mobile_otp.dart';
-import 'package:sar/email.dart';
-import 'package:sar/emailPL.dart';
-// import 'package:sar/PL/basicInfo.dart';
-// import 'package:sar/PL/emailLogin.dart';
+import 'package:sar/PersonalLoan/email_login.dart';
 import 'package:sar/resources/auth_methods.dart';
-import 'package:sar/selectLoan.dart';
 import 'package:sar/utils/utils.dart';
 
-class CreateUserPL extends StatefulWidget {
-  const CreateUserPL({Key? key}) : super(key: key);
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({Key? key}) : super(key: key);
 
   @override
-  State<CreateUserPL> createState() => _CreateUserPLState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _CreateUserPLState extends State<CreateUserPL> {
+class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -47,14 +42,14 @@ class _CreateUserPLState extends State<CreateUserPL> {
       showSnackBar(res, context);
     } else {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const MobileOTPPL()));
+          MaterialPageRoute(builder: (context) => const BasicInformationPL()));
     }
   }
 
   void navigateToLogin() {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => const EmailVerificationPL(),
+        builder: (context) => const EmailVerification(),
       ),
     );
   }

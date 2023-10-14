@@ -1,65 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:sar/HomeLoan/mobile_otp.dart';
-// import 'package:sar/PL/basicInfo.dart';
-// import 'package:sar/PL/signUp.dart';
-import 'package:sar/resources/auth_methods.dart';
-import 'package:sar/signupHL.dart';
-import 'package:sar/utils/utils.dart';
+import 'package:sar/PersonalLoan/information.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 bool isChecked = false;
 
-class EmailVerificationHL extends StatefulWidget {
-  const EmailVerificationHL({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<EmailVerificationHL> createState() => _EmailVerificationHLState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
 String cardSel = 'agent';
 
-class _EmailVerificationHLState extends State<EmailVerificationHL> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  bool _isLoading = false;
-  @override
-  void dispose() {
-    super.dispose();
-    _emailController.dispose();
-    _passwordController.dispose();
-  }
+class _LoginPageState extends State<LoginPage> {
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController otpController = TextEditingController();
 
-  void loginUser() async {
-    setState(() {
-      _isLoading = true;
-    });
-    String res = await AuthMethods().loginUser(
-        email: _emailController.text, password: _passwordController.text);
-    if (res == "success") {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const MobileOTPHL()));
-    } else {
-      showSnackBar(res, context);
-    }
-    setState(() {
-      _isLoading = false;
-    });
-  }
-
-  void navigateToSignUp() {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => const CreateUserHL(),
-      ),
-    );
-  }
+  FirebaseAuth auth = FirebaseAuth.instance;
+  bool otpVisibility = false;
+  User? user;
+  String verificationID = "";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home Loan"),
+        title: const Text("Personal Loan"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
@@ -89,7 +58,7 @@ class _EmailVerificationHLState extends State<EmailVerificationHL> {
               ),
               const SizedBox(height: 40),
               const Text(
-                "Login to your account",
+                "Enter your personal details",
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
@@ -188,100 +157,154 @@ class _EmailVerificationHLState extends State<EmailVerificationHL> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      const Text(
-                        "Please enter accurate information that matches your KYC documents.",
-                        style: const TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w400),
-                      ),
-                      const SizedBox(height: 20),
-
-                      TextFormField(
-                        autofocus: false,
-                        controller: _emailController,
-                        onChanged: (value) {
-                          setState(() {});
-                        },
+                      TextField(
+                        controller: phoneController,
                         decoration: const InputDecoration(
-                          labelText: "Enter email",
-                          hintText: "Enter email",
-                          border: OutlineInputBorder(),
+                          labelText: "Mobile Number",
+                          hintText: 'Phone Number',
+                          prefix: Text('+91'),
                         ),
+                        maxLength: 10,
+                        keyboardType: TextInputType.number,
                       ),
-                      const SizedBox(height: 20),
-
-                      TextFormField(
-                        obscureText: true,
-                        autofocus: false,
-                        controller: _passwordController,
-                        onChanged: (value) {
-                          setState(() {});
-                        },
-                        decoration: const InputDecoration(
-                          labelText: "Password",
-                          hintText: "Password",
-                          border: OutlineInputBorder(),
+                      Visibility(
+                        child: TextField(
+                          controller: otpController,
+                          decoration: InputDecoration(
+                            hintText: 'OTP',
+                            prefix: Padding(
+                              padding: EdgeInsets.all(4),
+                              child: Text(''),
+                            ),
+                          ),
+                          maxLength: 6,
+                          keyboardType: TextInputType.number,
                         ),
+                        visible: otpVisibility,
                       ),
 
-// mobile
-                      SizedBox(
-                        height: 20,
+                      // Visibility(
+                      //   child: OTPTextField(
+                      //       // controller: otpController,
+                      //       obscureText: true,
+                      //       controller: otpController,
+                      //       length: 6,
+                      //       width: MediaQuery.of(context).size.width,
+                      //       textFieldAlignment: MainAxisAlignment.spaceEvenly,
+                      //       fieldWidth: 45,
+                      //       fieldStyle: FieldStyle.box,
+                      //       outlineBorderRadius: 15,
+                      //       style: TextStyle(fontSize: 32),
+                      //       onChanged: (pin) {
+                      //         print("Changed: " + pin);
+                      //       },
+                      //       onCompleted: (pin) {
+                      //         print("Completed: " + pin);
+                      //       }),
+                      //   visible: otpVisibility,
+                      // ),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 8.0),
+                        child: Text(
+                            "*We will be sending an OTP to verify your details"),
                       ),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 60),
               Center(
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: loginUser,
-
-                      child: !_isLoading
-                          ? const Text(
-                              'Login',
-                            )
-                          : const CircularProgressIndicator(
-                              color: Colors.white,
-                            ),
-                      // child: const Text("Login"),
+                      // color: Colors.indigo[900],
+                      onPressed: () {
+                        if (otpVisibility) {
+                          verifyOTP();
+                        } else {
+                          loginWithPhone();
+                        }
+                      },
+                      child: Text(
+                        otpVisibility ? "Verify OTP" : "Send OTP",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(vertical: 8),
-                    child: const Text(
-                      "Don't have account!      ",
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: navigateToSignUp,
-                    child: Container(
-                      child: const Text(
-                        "Sign Up",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 0),
-                    ),
-                  ),
-                ],
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  void loginWithPhone() async {
+    auth.verifyPhoneNumber(
+      phoneNumber: "+91" + phoneController.text,
+      verificationCompleted: (PhoneAuthCredential credential) async {
+        await auth.signInWithCredential(credential).then((value) {
+          print("yes.You are logged in successfully");
+        });
+      },
+      verificationFailed: (FirebaseAuthException e) {
+        print(e.message);
+      },
+      codeSent: (String verificationId, int? resendToken) {
+        otpVisibility = true;
+        verificationID = verificationId;
+        setState(() {});
+      },
+      codeAutoRetrievalTimeout: (String verificationId) {},
+    );
+  }
+
+  void verifyOTP() async {
+    PhoneAuthCredential credential = PhoneAuthProvider.credential(
+        verificationId: verificationID, smsCode: otpController.text);
+
+    await auth.signInWithCredential(credential).then(
+      (value) {
+        setState(() {
+          user = FirebaseAuth.instance.currentUser;
+        });
+      },
+    ).whenComplete(
+      () {
+        if (user != null) {
+          Fluttertoast.showToast(
+            msg: "yes.You are logged in successfully",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0,
+          );
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => BasicInformationPL(),
+            ),
+          );
+        } else {
+          Fluttertoast.showToast(
+            msg: "no.your login is failed",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0,
+          );
+        }
+      },
     );
   }
 }

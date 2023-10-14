@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sar/HL/infoHL.dart';
-import 'package:sar/PL/infoPL.dart';
+import 'package:sar/HomeLoan/information.dart';
+import 'package:sar/PersonalLoan/information.dart';
 import 'package:sar/selectLoan.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:firebase_auth/firebase_auth.dart';

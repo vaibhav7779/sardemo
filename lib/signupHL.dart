@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sar/HL/mobileOTPHL.dart';
-import 'package:sar/PL/infoPL.dart';
+import 'package:sar/HomeLoan/mobile_otp.dart';
+import 'package:sar/PersonalLoan/information.dart';
 import 'package:sar/email.dart';
 import 'package:sar/emailPL.dart';
 // import 'package:sar/PL/basicInfo.dart';

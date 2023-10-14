@@ -2,11 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:sar/HL/addBankHL.dart';
-import 'package:sar/HL/verifyITR.dart';
-import 'package:sar/PL/approval.dart';
-import 'package:sar/PL/infoPL.dart';
-import 'package:sar/PL/emailLogin.dart';
+import 'package:sar/HomeLoan/add_bank.dart';
+import 'package:sar/HomeLoan/verify_itr.dart';
+import 'package:sar/PersonalLoan/approval.dart';
+import 'package:sar/PersonalLoan/information.dart';
+import 'package:sar/PersonalLoan/email_login.dart';
 import 'package:sar/home.dart';
 import 'package:sar/selectLoan.dart';
 

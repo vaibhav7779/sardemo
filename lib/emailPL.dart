@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sar/PL/infoPL.dart';
-import 'package:sar/PL/mobileOTPPL.dart';
+import 'package:sar/PersonalLoan/mobile_otp.dart';
 // import 'package:sar/PL/basicInfo.dart';
 // import 'package:sar/PL/signUp.dart';
 import 'package:sar/resources/auth_methods.dart';
-import 'package:sar/selectLoan.dart';
-import 'package:sar/signup.dart';
 import 'package:sar/signupPL.dart';
 import 'package:sar/utils/utils.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
